@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "mouser")(type "KiCad")(uri "/data/git/mister/boards/components/mouser.kicad_sym")(options "")(descr ""))
+)

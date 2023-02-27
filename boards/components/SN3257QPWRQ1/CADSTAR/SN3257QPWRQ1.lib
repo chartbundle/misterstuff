@@ -1,0 +1,16 @@
+.SN3257QPWRQ1 :1 ;PRECISION ANALOG MULTIPLEXER
+SOP65P640X120-16N
+*STM IC
+*NGS
+*PLB 1="SEL" 2="S1A" 3="S1B" 4="D1" 5="S2A" 6="S2B" 7="D2" 8="GND" 9="D3" 10="S3B" 11="S3A" 12="D4" 13="S4B" 14="S4A" 15="'EN'" 16="VDD"
+*MXP 16
+*DFN SN3257QPWRQ1
+~!Mouser2 Part Number (-)
+~!Mouser2 Price/Stock (-)
+~!Manufacturer_Name (Texas Instruments)
+~!Manufacturer_Part_Number (SN3257QPWRQ1)
+~!Link Datasheet (https://www.ti.com/lit/gpn/SN3257-Q1)
+~!Height (1.2mm)
+~!3D_Model (SN3257QPWRQ1)
+SN3257QPWRQ1
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 16.1!U 15.1!U 14.1!U 13.1!U 12.1!U 11.1!U 10.1!U 9.1!U 

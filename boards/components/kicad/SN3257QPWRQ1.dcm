@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SN3257QPWRQ1
+D PRECISION ANALOG MULTIPLEXER
+K
+F https://www.ti.com/lit/gpn/SN3257-Q1
+$ENDCMP
+#
+#End Doc Library

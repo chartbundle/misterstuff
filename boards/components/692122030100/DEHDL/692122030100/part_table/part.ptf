@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART '692122030100'
+CLASS = IO
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER2_PART_NUMBER", "MOUSER2_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Wurth Elektronik", "692122030100" (!) = "", "692122030100", "Other", "710-692122030100", "https://www.mouser.com/Search/Refine.aspx?Keyword=710-692122030100", "Wurth Elektronik WR-COM Series, Right Angle Through Hole, Version 3.0 Type A USB Connector, Receptacle", "https://componentsearchengine.com//692122030100.pdf", "7.55 mm"
+END_PART
+
+END.

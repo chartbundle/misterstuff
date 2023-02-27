@@ -1,0 +1,9 @@
+Manufacturer=Texas Instruments
+PartNumber=SN3257QPWRQ1
+PartCategory=Integrated Circuit
+PackageCategory=Small Outline Packages
+PinCount=16
+Version=1.1
+Released=2020-03-04 08:23:18
+Downloaded=2023-01-23 20:33:25
+3D=Y

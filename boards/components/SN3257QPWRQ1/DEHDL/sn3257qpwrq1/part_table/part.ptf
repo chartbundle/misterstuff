@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'SN3257QPWRQ1'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER2_PART_NUMBER", "MOUSER2_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Texas Instruments", "SN3257QPWRQ1" (!) = "", "SOP65P640X120-16N", "Small Outline Packages", "", "", "PRECISION ANALOG MULTIPLEXER", "https://www.ti.com/lit/gpn/SN3257-Q1", "1.2 mm"
+END_PART
+
+END.

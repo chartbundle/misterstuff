@@ -1,0 +1,661 @@
+2023-01-23 17:07:48.829 [main] INFO  Freerouting v1.6.5 (build-date: 2023-01-03)
+2023-01-23 17:07:48.831 [main] DEBUG  Version: 1.6.5,2023-01-03
+2023-01-23 17:07:48.832 [main] DEBUG  Command line arguments: 'simpleadapter.dsn'
+2023-01-23 17:07:48.832 [main] DEBUG  Architecture: Linux,amd64,6.1.0-1-amd64
+2023-01-23 17:07:48.833 [main] DEBUG  Java: 17.0.5,Eclipse Adoptium
+2023-01-23 17:07:48.833 [main] DEBUG  System Language: en,en_US
+2023-01-23 17:07:48.835 [main] DEBUG  Hardware: 16 CPU cores,9880 MB RAM
+2023-01-23 17:07:48.844 [main] DEBUG  UTC Time: 2023-01-24T01:07:48.835391308Z
+2023-01-23 17:07:48.847 [main] DEBUG  GUI Language: en_US
+2023-01-23 17:07:49.018 [main] TRACE Method 'MainApplication.main()' was performed in 0.28 seconds.
+2023-01-23 17:08:22.281 [AWT-EventQueue-0] INFO  Opening 'simpleadapter.dsn'...
+2023-01-23 17:08:22.823 [AWT-EventQueue-0] INFO  Opening 'simpleadapter.rules'...
+2023-01-23 17:08:22.824 [AWT-EventQueue-0] ERROR File 'simpleadapter.rules' was not found.
+2023-01-23 17:08:40.314 [Thread-0] INFO  Starting auto-routing...
+2023-01-23 17:08:40.648 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board '67741371f6a121e294b5ece71bd9c450' making 25 changes' was performed in 0.27 seconds.
+2023-01-23 17:08:40.706 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board '4c24d9b2b25c6dad16b899d656bd0bb5' making 10 changes' was performed in 0.04 seconds.
+2023-01-23 17:08:40.791 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board '8bcdc53804043d289e857d3328ed6e10' making 10 changes' was performed in 0.08 seconds.
+2023-01-23 17:08:40.852 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #4 on board '23612aad16f43d19647cac51f23ec7aa' making 9 changes' was performed in 0.06 seconds.
+2023-01-23 17:08:40.903 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #5 on board 'b38f3c606345164f04b2f502375bf42a' making 5 changes' was performed in 0.04 seconds.
+2023-01-23 17:08:40.934 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #6 on board '9f0f1bff78c71bce1f235de3645fc53c' making 4 changes' was performed in 0.03 seconds.
+2023-01-23 17:08:40.939 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #7 on board '53d722c01fad86938442dbd9850aa7f8' making 0 changes' was performed in 0.00 seconds.
+2023-01-23 17:08:40.940 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.62 seconds.
+2023-01-23 17:08:40.940 [Thread-0] INFO  Auto-routing was completed in 0.62 seconds.
+2023-01-23 17:08:40.941 [Thread-0] INFO  Starting route optimization on 15 threads...
+2023-01-23 17:08:40.949 [Thread-0] DEBUG Scheduling #0 of 11 tasks for item No. 1601 ......
+2023-01-23 17:08:40.954 [Thread-0] DEBUG Scheduling #1 of 11 tasks for item No. 645 ......
+2023-01-23 17:08:40.955 [Thread-1] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1601
+2023-01-23 17:08:40.959 [Thread-0] DEBUG Scheduling #2 of 11 tasks for item No. 1168 ......
+2023-01-23 17:08:40.959 [Thread-2] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 645
+2023-01-23 17:08:40.963 [Thread-0] DEBUG Scheduling #3 of 11 tasks for item No. 204 ......
+2023-01-23 17:08:40.963 [Thread-3] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1168
+2023-01-23 17:08:40.969 [Thread-0] DEBUG Scheduling #4 of 11 tasks for item No. 328 ......
+2023-01-23 17:08:40.969 [Thread-4] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 204
+2023-01-23 17:08:40.976 [Thread-0] DEBUG Scheduling #5 of 11 tasks for item No. 353 ......
+2023-01-23 17:08:40.976 [Thread-5] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 328
+2023-01-23 17:08:40.984 [Thread-0] DEBUG Scheduling #6 of 11 tasks for item No. 378 ......
+2023-01-23 17:08:40.988 [Thread-6] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 353
+2023-01-23 17:08:40.990 [Thread-0] DEBUG Scheduling #7 of 11 tasks for item No. 409 ......
+2023-01-23 17:08:40.992 [Thread-7] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 378
+2023-01-23 17:08:40.996 [Thread-0] DEBUG Scheduling #8 of 11 tasks for item No. 1043 ......
+2023-01-23 17:08:41.009 [Thread-5] DEBUG Finished one task (3 of 11) on pass 1 with item id: 328 in 0 m 0.013s won: false Improved: true via-: 0 incomplete(0, 0)
+2023-01-23 17:08:40.996 [Thread-8] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 409
+2023-01-23 17:08:41.009 [Thread-2] DEBUG Finished one task (1 of 11) on pass 1 with item id: 645 in 0 m 0.023s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.009 [Thread-4] DEBUG Finished one task (2 of 11) on pass 1 with item id: 204 in 0 m 0.015s won: true Improved: true via-: 0 len-: 812500.0000009537 incomplete(0, 0)
+2023-01-23 17:08:41.016 [Thread-9] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1043
+2023-01-23 17:08:41.016 [Thread-0] DEBUG Scheduling #9 of 11 tasks for item No. 428 ......
+2023-01-23 17:08:41.016 [Thread-6] DEBUG Finished one task (4 of 11) on pass 1 with item id: 353 in 0 m 0.027s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.019 [Thread-8] DEBUG Finished one task (5 of 11) on pass 1 with item id: 409 in 0 m 0.023s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.021 [Thread-7] DEBUG Finished one task (6 of 11) on pass 1 with item id: 378 in 0 m 0.029s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.022 [Thread-0] DEBUG Scheduling #10 of 11 tasks for item No. 1511 ......
+2023-01-23 17:08:41.022 [Thread-10] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 428
+2023-01-23 17:08:41.024 [Thread-11] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1511
+2023-01-23 17:08:41.025 [Thread-0] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:08:41.031 [Thread-9] DEBUG Finished one task (7 of 11) on pass 1 with item id: 1043 in 0 m 0.015s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.034 [Thread-10] DEBUG Finished one task (8 of 11) on pass 1 with item id: 428 in 0 m 0.012s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.057 [Thread-11] DEBUG Finished one task (9 of 11) on pass 1 with item id: 1511 in 0 m 0.033s won: true Improved: true via-: 0 len-: 3.1102477352409363E7 incomplete(0, 0)
+2023-01-23 17:08:41.119 [Thread-1] DEBUG Finished one task (10 of 11) on pass 1 with item id: 1601 in 0 m 0.165s won: true Improved: true via-: 0 len-: 8.474679349275684E7 incomplete(0, 0)
+2023-01-23 17:08:41.174 [Thread-3] DEBUG Finished one task (11 of 11) on pass 1 with item id: 1168 in 0 m 0.211s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.180 [Thread-0] DEBUG Finished pass #1 in 0 minutes 0.233 s with 3 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:08:41.185 [Thread-0] DEBUG Improved: true, interrupted: false, via#: 2, len: 152203.50773220518, via-: 0, len-: 3807.6936459309654
+2023-01-23 17:08:41.186 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 2 vias and 156,011.20 trace length running on 15 threads.' was performed in 0.24 seconds.
+2023-01-23 17:08:41.187 [Thread-0] DEBUG Scheduling #0 of 11 tasks for item No. 1511 ......
+2023-01-23 17:08:41.191 [Thread-0] DEBUG Scheduling #1 of 11 tasks for item No. 378 ......
+2023-01-23 17:08:41.191 [Thread-12] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1511
+2023-01-23 17:08:41.194 [Thread-0] DEBUG Scheduling #2 of 11 tasks for item No. 428 ......
+2023-01-23 17:08:41.194 [Thread-13] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 378
+2023-01-23 17:08:41.198 [Thread-0] DEBUG Scheduling #3 of 11 tasks for item No. 409 ......
+2023-01-23 17:08:41.198 [Thread-14] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 428
+2023-01-23 17:08:41.201 [Thread-0] DEBUG Scheduling #4 of 11 tasks for item No. 328 ......
+2023-01-23 17:08:41.201 [Thread-15] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 409
+2023-01-23 17:08:41.204 [Thread-0] DEBUG Scheduling #5 of 11 tasks for item No. 353 ......
+2023-01-23 17:08:41.204 [Thread-16] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 328
+2023-01-23 17:08:41.204 [Thread-13] DEBUG Finished one task (1 of 11) on pass 2 with item id: 378 in 0 m 0.01s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.221 [Thread-0] DEBUG Scheduling #6 of 11 tasks for item No. 1168 ......
+2023-01-23 17:08:41.221 [Thread-17] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 353
+2023-01-23 17:08:41.222 [Thread-15] DEBUG Finished one task (2 of 11) on pass 2 with item id: 409 in 0 m 0.021s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.224 [Thread-14] DEBUG Finished one task (3 of 11) on pass 2 with item id: 428 in 0 m 0.026s won: true Improved: true via-: 0 len-: 1903.8059225082397 incomplete(0, 0)
+2023-01-23 17:08:41.224 [Thread-18] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1168
+2023-01-23 17:08:41.224 [Thread-0] DEBUG Scheduling #7 of 11 tasks for item No. 645 ......
+2023-01-23 17:08:41.229 [Thread-0] DEBUG Scheduling #8 of 11 tasks for item No. 2078 ......
+2023-01-23 17:08:41.229 [Thread-19] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 645
+2023-01-23 17:08:41.230 [Thread-17] DEBUG Finished one task (4 of 11) on pass 2 with item id: 353 in 0 m 0.009s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.233 [Thread-0] DEBUG Scheduling #9 of 11 tasks for item No. 2073 ......
+2023-01-23 17:08:41.233 [Thread-20] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 2078
+2023-01-23 17:08:41.233 [Thread-16] DEBUG Finished one task (5 of 11) on pass 2 with item id: 328 in 0 m 0.029s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.236 [Thread-0] DEBUG Scheduling #10 of 11 tasks for item No. 2074 ......
+2023-01-23 17:08:41.236 [Thread-21] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 2073
+2023-01-23 17:08:41.240 [Thread-12] DEBUG Finished one task (6 of 11) on pass 2 with item id: 1511 in 0 m 0.049s won: true Improved: true via-: 0 len-: 331262.23047828674 incomplete(0, 0)
+2023-01-23 17:08:41.240 [Thread-0] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:08:41.240 [Thread-22] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 2074
+2023-01-23 17:08:41.243 [Thread-19] DEBUG Finished one task (7 of 11) on pass 2 with item id: 645 in 0 m 0.014s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.250 [Thread-21] DEBUG Finished one task (8 of 11) on pass 2 with item id: 2073 in 0 m 0.014s won: true Improved: true via-: 0 len-: 812500.0 incomplete(0, 0)
+2023-01-23 17:08:41.257 [Thread-22] DEBUG Finished one task (9 of 11) on pass 2 with item id: 2074 in 0 m 0.017s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.418 [Thread-20] DEBUG Finished one task (10 of 11) on pass 2 with item id: 2078 in 0 m 0.185s won: false Improved: false via-: 1 incomplete(0, 1)
+2023-01-23 17:08:41.455 [Thread-18] DEBUG Finished one task (11 of 11) on pass 2 with item id: 1168 in 0 m 0.231s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.456 [Thread-0] DEBUG Finished pass #2 in 0 minutes 0.27 s with 3 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:08:41.457 [Thread-0] DEBUG Improved: true, interrupted: false, via#: 2, len: 152203.4491535614, via-: 0, len-: 0.058578643773216754
+2023-01-23 17:08:41.458 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 11 items, 2 vias and 152,203.51 trace length running on 15 threads.' was performed in 0.27 seconds.
+2023-01-23 17:08:41.459 [Thread-0] DEBUG Scheduling #0 of 11 tasks for item No. 1511 ......
+2023-01-23 17:08:41.464 [Thread-0] DEBUG Scheduling #1 of 11 tasks for item No. 2074 ......
+2023-01-23 17:08:41.464 [Thread-23] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 1511
+2023-01-23 17:08:41.467 [Thread-0] DEBUG Scheduling #2 of 11 tasks for item No. 328 ......
+2023-01-23 17:08:41.467 [Thread-24] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 2074
+2023-01-23 17:08:41.470 [Thread-0] DEBUG Scheduling #3 of 11 tasks for item No. 409 ......
+2023-01-23 17:08:41.471 [Thread-25] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 328
+2023-01-23 17:08:41.473 [Thread-0] DEBUG Scheduling #4 of 11 tasks for item No. 378 ......
+2023-01-23 17:08:41.473 [Thread-26] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 409
+2023-01-23 17:08:41.476 [Thread-0] DEBUG Scheduling #5 of 11 tasks for item No. 353 ......
+2023-01-23 17:08:41.476 [Thread-27] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 378
+2023-01-23 17:08:41.479 [Thread-0] DEBUG Scheduling #6 of 11 tasks for item No. 645 ......
+2023-01-23 17:08:41.481 [Thread-26] DEBUG Finished one task (1 of 11) on pass 3 with item id: 409 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.482 [Thread-0] DEBUG Scheduling #7 of 11 tasks for item No. 1168 ......
+2023-01-23 17:08:41.482 [Thread-29] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 645
+2023-01-23 17:08:41.483 [Thread-28] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 353
+2023-01-23 17:08:41.484 [Thread-27] DEBUG Finished one task (2 of 11) on pass 3 with item id: 378 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.484 [Thread-24] DEBUG Finished one task (3 of 11) on pass 3 with item id: 2074 in 0 m 0.017s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.486 [Thread-0] DEBUG Scheduling #8 of 11 tasks for item No. 2078 ......
+2023-01-23 17:08:41.485 [Thread-30] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 1168
+2023-01-23 17:08:41.487 [Thread-25] DEBUG Finished one task (4 of 11) on pass 3 with item id: 328 in 0 m 0.017s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.489 [Thread-0] DEBUG Scheduling #9 of 11 tasks for item No. 2189 ......
+2023-01-23 17:08:41.493 [Thread-28] DEBUG Finished one task (5 of 11) on pass 3 with item id: 353 in 0 m 0.01s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.489 [Thread-31] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 2078
+2023-01-23 17:08:41.497 [Thread-0] DEBUG Scheduling #10 of 11 tasks for item No. 2148 ......
+2023-01-23 17:08:41.499 [Thread-29] DEBUG Finished one task (6 of 11) on pass 3 with item id: 645 in 0 m 0.017s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.497 [Thread-32] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 2189
+2023-01-23 17:08:41.504 [Thread-0] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:08:41.504 [Thread-33] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 2148
+2023-01-23 17:08:41.516 [Thread-32] DEBUG Finished one task (7 of 11) on pass 3 with item id: 2189 in 0 m 0.018s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.518 [Thread-33] DEBUG Finished one task (8 of 11) on pass 3 with item id: 2148 in 0 m 0.014s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.551 [Thread-23] DEBUG Finished one task (9 of 11) on pass 3 with item id: 1511 in 0 m 0.086s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.665 [Thread-31] DEBUG Finished one task (10 of 11) on pass 3 with item id: 2078 in 0 m 0.176s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.688 [Thread-30] DEBUG Finished one task (11 of 11) on pass 3 with item id: 1168 in 0 m 0.202s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.689 [Thread-0] DEBUG Finished pass #3 in 0 minutes 0.23 s with 0 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:08:41.689 [Thread-0] DEBUG Improved: false, interrupted: false, via#: 0, len: 152203.4491535614, via-: 2, len-: 0.0
+2023-01-23 17:08:41.689 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #3 with 11 items, 2 vias and 152,203.45 trace length running on 15 threads.' was performed in 0.23 seconds.
+2023-01-23 17:08:41.690 [Thread-0] DEBUG Scheduling #0 of 11 tasks for item No. 378 ......
+2023-01-23 17:08:41.692 [Thread-0] DEBUG Scheduling #1 of 11 tasks for item No. 2189 ......
+2023-01-23 17:08:41.692 [Thread-34] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 378
+2023-01-23 17:08:41.694 [Thread-0] DEBUG Scheduling #2 of 11 tasks for item No. 2074 ......
+2023-01-23 17:08:41.695 [Thread-35] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 2189
+2023-01-23 17:08:41.698 [Thread-0] DEBUG Scheduling #3 of 11 tasks for item No. 2148 ......
+2023-01-23 17:08:41.698 [Thread-36] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 2074
+2023-01-23 17:08:41.701 [Thread-34] DEBUG Finished one task (1 of 11) on pass 4 with item id: 378 in 0 m 0.009s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.701 [Thread-0] DEBUG Scheduling #4 of 11 tasks for item No. 409 ......
+2023-01-23 17:08:41.702 [Thread-37] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 2148
+2023-01-23 17:08:41.705 [Thread-0] DEBUG Scheduling #5 of 11 tasks for item No. 353 ......
+2023-01-23 17:08:41.705 [Thread-38] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 409
+2023-01-23 17:08:41.707 [Thread-35] DEBUG Finished one task (2 of 11) on pass 4 with item id: 2189 in 0 m 0.013s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.708 [Thread-0] DEBUG Scheduling #6 of 11 tasks for item No. 645 ......
+2023-01-23 17:08:41.709 [Thread-39] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 353
+2023-01-23 17:08:41.710 [Thread-37] DEBUG Finished one task (3 of 11) on pass 4 with item id: 2148 in 0 m 0.009s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.712 [Thread-36] DEBUG Finished one task (4 of 11) on pass 4 with item id: 2074 in 0 m 0.014s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.712 [Thread-40] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 645
+2023-01-23 17:08:41.712 [Thread-0] DEBUG Scheduling #7 of 11 tasks for item No. 328 ......
+2023-01-23 17:08:41.713 [Thread-38] DEBUG Finished one task (5 of 11) on pass 4 with item id: 409 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.716 [Thread-0] DEBUG Scheduling #8 of 11 tasks for item No. 1511 ......
+2023-01-23 17:08:41.717 [Thread-41] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 328
+2023-01-23 17:08:41.719 [Thread-39] DEBUG Finished one task (6 of 11) on pass 4 with item id: 353 in 0 m 0.011s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.719 [Thread-0] DEBUG Scheduling #9 of 11 tasks for item No. 2078 ......
+2023-01-23 17:08:41.720 [Thread-42] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 1511
+2023-01-23 17:08:41.722 [Thread-40] DEBUG Finished one task (7 of 11) on pass 4 with item id: 645 in 0 m 0.01s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.722 [Thread-0] DEBUG Scheduling #10 of 11 tasks for item No. 1168 ......
+2023-01-23 17:08:41.722 [Thread-43] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 2078
+2023-01-23 17:08:41.726 [Thread-0] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:08:41.726 [Thread-44] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 1168
+2023-01-23 17:08:41.731 [Thread-41] DEBUG Finished one task (8 of 11) on pass 4 with item id: 328 in 0 m 0.015s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.741 [Thread-42] DEBUG Finished one task (9 of 11) on pass 4 with item id: 1511 in 0 m 0.022s won: true Improved: true via-: 0 len-: 331262.23047733307 incomplete(0, 0)
+2023-01-23 17:08:41.827 [Thread-43] DEBUG Finished one task (10 of 11) on pass 4 with item id: 2078 in 0 m 0.105s won: false Improved: false via-: 1 incomplete(0, 1)
+2023-01-23 17:08:41.884 [Thread-44] DEBUG Finished one task (11 of 11) on pass 4 with item id: 1168 in 0 m 0.159s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.885 [Thread-0] DEBUG Finished pass #4 in 0 minutes 0.195 s with 1 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:08:41.886 [Thread-0] DEBUG Improved: true, interrupted: false, via#: 2, len: 152193.2564695467, via-: 0, len-: 10.192684014706174
+2023-01-23 17:08:41.886 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #4 with 11 items, 2 vias and 152,203.45 trace length running on 15 threads.' was performed in 0.20 seconds.
+2023-01-23 17:08:41.887 [Thread-0] DEBUG Scheduling #0 of 11 tasks for item No. 328 ......
+2023-01-23 17:08:41.889 [Thread-0] DEBUG Scheduling #1 of 11 tasks for item No. 2189 ......
+2023-01-23 17:08:41.890 [Thread-45] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 328
+2023-01-23 17:08:41.892 [Thread-0] DEBUG Scheduling #2 of 11 tasks for item No. 2074 ......
+2023-01-23 17:08:41.892 [Thread-46] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 2189
+2023-01-23 17:08:41.895 [Thread-0] DEBUG Scheduling #3 of 11 tasks for item No. 2148 ......
+2023-01-23 17:08:41.895 [Thread-47] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 2074
+2023-01-23 17:08:41.898 [Thread-0] DEBUG Scheduling #4 of 11 tasks for item No. 409 ......
+2023-01-23 17:08:41.898 [Thread-48] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 2148
+2023-01-23 17:08:41.901 [Thread-0] DEBUG Scheduling #5 of 11 tasks for item No. 378 ......
+2023-01-23 17:08:41.901 [Thread-49] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 409
+2023-01-23 17:08:41.902 [Thread-45] DEBUG Finished one task (1 of 11) on pass 5 with item id: 328 in 0 m 0.013s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.903 [Thread-0] DEBUG Scheduling #6 of 11 tasks for item No. 353 ......
+2023-01-23 17:08:41.903 [Thread-46] DEBUG Finished one task (2 of 11) on pass 5 with item id: 2189 in 0 m 0.011s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.904 [Thread-50] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 378
+2023-01-23 17:08:41.905 [Thread-0] DEBUG Scheduling #7 of 11 tasks for item No. 645 ......
+2023-01-23 17:08:41.906 [Thread-51] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 353
+2023-01-23 17:08:41.907 [Thread-48] DEBUG Finished one task (3 of 11) on pass 5 with item id: 2148 in 0 m 0.009s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.907 [Thread-49] DEBUG Finished one task (5 of 11) on pass 5 with item id: 409 in 0 m 0.006s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.907 [Thread-47] DEBUG Finished one task (4 of 11) on pass 5 with item id: 2074 in 0 m 0.012s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.908 [Thread-0] DEBUG Scheduling #8 of 11 tasks for item No. 1168 ......
+2023-01-23 17:08:41.908 [Thread-52] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 645
+2023-01-23 17:08:41.910 [Thread-50] DEBUG Finished one task (6 of 11) on pass 5 with item id: 378 in 0 m 0.006s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.911 [Thread-0] DEBUG Scheduling #9 of 11 tasks for item No. 2078 ......
+2023-01-23 17:08:41.911 [Thread-53] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 1168
+2023-01-23 17:08:41.914 [Thread-51] DEBUG Finished one task (7 of 11) on pass 5 with item id: 353 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.915 [Thread-0] DEBUG Scheduling #10 of 11 tasks for item No. 2317 ......
+2023-01-23 17:08:41.915 [Thread-54] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 2078
+2023-01-23 17:08:41.918 [Thread-0] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:08:41.918 [Thread-55] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 2317
+2023-01-23 17:08:41.923 [Thread-52] DEBUG Finished one task (8 of 11) on pass 5 with item id: 645 in 0 m 0.015s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:41.990 [Thread-55] DEBUG Finished one task (9 of 11) on pass 5 with item id: 2317 in 0 m 0.072s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:42.062 [Thread-54] DEBUG Finished one task (10 of 11) on pass 5 with item id: 2078 in 0 m 0.147s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:42.073 [Thread-53] DEBUG Finished one task (11 of 11) on pass 5 with item id: 1168 in 0 m 0.162s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:08:42.074 [Thread-0] DEBUG Finished pass #5 in 0 minutes 0.187 s with 0 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:08:42.074 [Thread-0] DEBUG Improved: false, interrupted: false, via#: 0, len: 152193.2564695467, via-: 2, len-: 0.0
+2023-01-23 17:08:42.074 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #5 with 11 items, 2 vias and 152,193.26 trace length running on 15 threads.' was performed in 0.19 seconds.
+2023-01-23 17:08:42.075 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 1.13 seconds.
+2023-01-23 17:08:42.076 [Thread-0] INFO  Route optimization was completed in 1.13 seconds and it improved the design by ~1.22%.
+2023-01-23 17:08:42.080 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 1.77 seconds.
+2023-01-23 17:11:31.398 [AWT-EventQueue-0] INFO  Opening 'simpleadapter.dsn'...
+2023-01-23 17:11:31.771 [AWT-EventQueue-0] INFO  Opening 'simpleadapter.rules'...
+2023-01-23 17:11:31.771 [AWT-EventQueue-0] ERROR File 'simpleadapter.rules' was not found.
+2023-01-23 17:11:34.827 [Thread-56] INFO  Starting auto-routing...
+2023-01-23 17:11:34.949 [Thread-56] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board 'c627bcc3d50498e34d0043c79dd2fb6f' making 20 changes' was performed in 0.12 seconds.
+2023-01-23 17:11:34.989 [Thread-56] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board '8e08fceffba8db871e9f5a7c5d3bfb88' making 6 changes' was performed in 0.04 seconds.
+2023-01-23 17:11:35.031 [Thread-56] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board '738c91313fb0851b125ccf8f5d5d43aa' making 16 changes' was performed in 0.04 seconds.
+2023-01-23 17:11:35.051 [Thread-56] TRACE Method 'BatchAutorouter.autoroute_pass #4 on board '8c9ca13d9452ca060bb5b224730d2ea3' making 4 changes' was performed in 0.02 seconds.
+2023-01-23 17:11:35.055 [Thread-56] TRACE Method 'BatchAutorouter.autoroute_pass #5 on board '25a553d0484204bb651ae0d7f747045e' making 0 changes' was performed in 0.00 seconds.
+2023-01-23 17:11:35.056 [Thread-56] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.23 seconds.
+2023-01-23 17:11:35.056 [Thread-56] INFO  Auto-routing was completed in 0.23 seconds.
+2023-01-23 17:11:35.056 [Thread-56] INFO  Starting route optimization on 15 threads...
+2023-01-23 17:11:35.057 [Thread-56] DEBUG Scheduling #0 of 11 tasks for item No. 512 ......
+2023-01-23 17:11:35.059 [Thread-56] DEBUG Scheduling #1 of 11 tasks for item No. 1232 ......
+2023-01-23 17:11:35.060 [Thread-57] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 512
+2023-01-23 17:11:35.062 [Thread-56] DEBUG Scheduling #2 of 11 tasks for item No. 1562 ......
+2023-01-23 17:11:35.062 [Thread-58] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1232
+2023-01-23 17:11:35.064 [Thread-56] DEBUG Scheduling #3 of 11 tasks for item No. 1434 ......
+2023-01-23 17:11:35.064 [Thread-59] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1562
+2023-01-23 17:11:35.068 [Thread-56] DEBUG Scheduling #4 of 11 tasks for item No. 1440 ......
+2023-01-23 17:11:35.068 [Thread-60] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1434
+2023-01-23 17:11:35.071 [Thread-56] DEBUG Scheduling #5 of 11 tasks for item No. 391 ......
+2023-01-23 17:11:35.072 [Thread-61] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1440
+2023-01-23 17:11:35.074 [Thread-56] DEBUG Scheduling #6 of 11 tasks for item No. 399 ......
+2023-01-23 17:11:35.074 [Thread-62] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 391
+2023-01-23 17:11:35.078 [Thread-56] DEBUG Scheduling #7 of 11 tasks for item No. 511 ......
+2023-01-23 17:11:35.082 [Thread-63] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 399
+2023-01-23 17:11:35.083 [Thread-56] DEBUG Scheduling #8 of 11 tasks for item No. 1455 ......
+2023-01-23 17:11:35.087 [Thread-56] DEBUG Scheduling #9 of 11 tasks for item No. 456 ......
+2023-01-23 17:11:35.090 [Thread-62] DEBUG Finished one task (1 of 11) on pass 1 with item id: 391 in 0 m 0.016s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.091 [Thread-56] DEBUG Scheduling #10 of 11 tasks for item No. 1461 ......
+2023-01-23 17:11:35.091 [Thread-64] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 511
+2023-01-23 17:11:35.091 [Thread-66] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 456
+2023-01-23 17:11:35.094 [Thread-65] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1455
+2023-01-23 17:11:35.095 [Thread-60] DEBUG Finished one task (2 of 11) on pass 1 with item id: 1434 in 0 m 0.027s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.098 [Thread-57] DEBUG Finished one task (3 of 11) on pass 1 with item id: 512 in 0 m 0.039s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.100 [Thread-63] DEBUG Finished one task (4 of 11) on pass 1 with item id: 399 in 0 m 0.017s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.106 [Thread-56] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:11:35.107 [Thread-67] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1461
+2023-01-23 17:11:35.125 [Thread-61] DEBUG Finished one task (5 of 11) on pass 1 with item id: 1440 in 0 m 0.054s won: true Improved: true via-: 0 len-: 533092.8547735214 incomplete(0, 0)
+2023-01-23 17:11:35.136 [Thread-65] DEBUG Finished one task (6 of 11) on pass 1 with item id: 1455 in 0 m 0.039s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.138 [Thread-66] DEBUG Finished one task (7 of 11) on pass 1 with item id: 456 in 0 m 0.046s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.142 [Thread-58] DEBUG Finished one task (8 of 11) on pass 1 with item id: 1232 in 0 m 0.08s won: true Improved: true via-: 0 len-: 4.476869387428188E7 incomplete(0, 0)
+2023-01-23 17:11:35.144 [Thread-64] DEBUG Finished one task (9 of 11) on pass 1 with item id: 511 in 0 m 0.057s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.149 [Thread-67] DEBUG Finished one task (10 of 11) on pass 1 with item id: 1461 in 0 m 0.041s won: false Improved: true via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.187 [Thread-59] DEBUG Finished one task (11 of 11) on pass 1 with item id: 1562 in 0 m 0.123s won: false Improved: true via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.188 [Thread-56] DEBUG Finished pass #1 in 0 minutes 0.13 s with 2 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:11:35.188 [Thread-56] DEBUG Improved: true, interrupted: false, via#: 2, len: 156759.13336322497, via-: 0, len-: 1377.4982730548072
+2023-01-23 17:11:35.188 [Thread-56] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 2 vias and 158,136.63 trace length running on 15 threads.' was performed in 0.13 seconds.
+2023-01-23 17:11:35.189 [Thread-56] DEBUG Scheduling #0 of 11 tasks for item No. 1562 ......
+2023-01-23 17:11:35.192 [Thread-56] DEBUG Scheduling #1 of 11 tasks for item No. 1440 ......
+2023-01-23 17:11:35.192 [Thread-68] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1562
+2023-01-23 17:11:35.194 [Thread-56] DEBUG Scheduling #2 of 11 tasks for item No. 456 ......
+2023-01-23 17:11:35.194 [Thread-69] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1440
+2023-01-23 17:11:35.196 [Thread-56] DEBUG Scheduling #3 of 11 tasks for item No. 399 ......
+2023-01-23 17:11:35.196 [Thread-70] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 456
+2023-01-23 17:11:35.198 [Thread-56] DEBUG Scheduling #4 of 11 tasks for item No. 391 ......
+2023-01-23 17:11:35.198 [Thread-71] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 399
+2023-01-23 17:11:35.200 [Thread-72] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 391
+2023-01-23 17:11:35.200 [Thread-56] DEBUG Scheduling #5 of 11 tasks for item No. 1434 ......
+2023-01-23 17:11:35.203 [Thread-56] DEBUG Scheduling #6 of 11 tasks for item No. 512 ......
+2023-01-23 17:11:35.203 [Thread-73] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1434
+2023-01-23 17:11:35.205 [Thread-56] DEBUG Scheduling #7 of 11 tasks for item No. 511 ......
+2023-01-23 17:11:35.205 [Thread-71] DEBUG Finished one task (1 of 11) on pass 2 with item id: 399 in 0 m 0.007s won: true Improved: true via-: 0 len-: 9.5367431640625E-7 incomplete(0, 0)
+2023-01-23 17:11:35.206 [Thread-69] DEBUG Finished one task (2 of 11) on pass 2 with item id: 1440 in 0 m 0.012s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.205 [Thread-74] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 512
+2023-01-23 17:11:35.207 [Thread-72] DEBUG Finished one task (3 of 11) on pass 2 with item id: 391 in 0 m 0.007s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.209 [Thread-73] DEBUG Finished one task (4 of 11) on pass 2 with item id: 1434 in 0 m 0.006s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.210 [Thread-70] DEBUG Finished one task (5 of 11) on pass 2 with item id: 456 in 0 m 0.014s won: false Improved: true via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.213 [Thread-56] DEBUG Scheduling #8 of 11 tasks for item No. 1746 ......
+2023-01-23 17:11:35.213 [Thread-75] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 511
+2023-01-23 17:11:35.216 [Thread-56] DEBUG Scheduling #9 of 11 tasks for item No. 1660 ......
+2023-01-23 17:11:35.217 [Thread-76] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1746
+2023-01-23 17:11:35.219 [Thread-56] DEBUG Scheduling #10 of 11 tasks for item No. 1769 ......
+2023-01-23 17:11:35.219 [Thread-77] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1660
+2023-01-23 17:11:35.222 [Thread-56] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:11:35.223 [Thread-74] DEBUG Finished one task (6 of 11) on pass 2 with item id: 512 in 0 m 0.018s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.222 [Thread-78] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1769
+2023-01-23 17:11:35.228 [Thread-77] DEBUG Finished one task (7 of 11) on pass 2 with item id: 1660 in 0 m 0.009s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.229 [Thread-75] DEBUG Finished one task (8 of 11) on pass 2 with item id: 511 in 0 m 0.016s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.258 [Thread-78] DEBUG Finished one task (9 of 11) on pass 2 with item id: 1769 in 0 m 0.036s won: true Improved: true via-: 0 len-: 774078.0092439651 incomplete(0, 0)
+2023-01-23 17:11:35.269 [Thread-76] DEBUG Finished one task (10 of 11) on pass 2 with item id: 1746 in 0 m 0.053s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.277 [Thread-68] DEBUG Finished one task (11 of 11) on pass 2 with item id: 1562 in 0 m 0.085s won: true Improved: true via-: 0 len-: 7.508827349783897E7 incomplete(0, 0)
+2023-01-23 17:11:35.278 [Thread-56] DEBUG Finished pass #2 in 0 minutes 0.088 s with 3 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:11:35.278 [Thread-56] DEBUG Improved: true, interrupted: false, via#: 2, len: 154448.72494790683, via-: 0, len-: 2310.4084153181466
+2023-01-23 17:11:35.278 [Thread-56] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 11 items, 2 vias and 156,759.13 trace length running on 15 threads.' was performed in 0.09 seconds.
+2023-01-23 17:11:35.279 [Thread-56] DEBUG Scheduling #0 of 11 tasks for item No. 399 ......
+2023-01-23 17:11:35.282 [Thread-56] DEBUG Scheduling #1 of 11 tasks for item No. 1660 ......
+2023-01-23 17:11:35.283 [Thread-79] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 399
+2023-01-23 17:11:35.284 [Thread-56] DEBUG Scheduling #2 of 11 tasks for item No. 456 ......
+2023-01-23 17:11:35.285 [Thread-80] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 1660
+2023-01-23 17:11:35.286 [Thread-56] DEBUG Scheduling #3 of 11 tasks for item No. 511 ......
+2023-01-23 17:11:35.287 [Thread-81] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 456
+2023-01-23 17:11:35.288 [Thread-56] DEBUG Scheduling #4 of 11 tasks for item No. 1434 ......
+2023-01-23 17:11:35.289 [Thread-82] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 511
+2023-01-23 17:11:35.290 [Thread-56] DEBUG Scheduling #5 of 11 tasks for item No. 391 ......
+2023-01-23 17:11:35.290 [Thread-79] DEBUG Finished one task (1 of 11) on pass 3 with item id: 399 in 0 m 0.008s won: true Improved: true via-: 0 len-: 9.5367431640625E-7 incomplete(0, 0)
+2023-01-23 17:11:35.290 [Thread-83] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 1434
+2023-01-23 17:11:35.293 [Thread-56] DEBUG Scheduling #6 of 11 tasks for item No. 1440 ......
+2023-01-23 17:11:35.294 [Thread-56] DEBUG Scheduling #7 of 11 tasks for item No. 512 ......
+2023-01-23 17:11:35.294 [Thread-85] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 1440
+2023-01-23 17:11:35.296 [Thread-56] DEBUG Scheduling #8 of 11 tasks for item No. 1746 ......
+2023-01-23 17:11:35.299 [Thread-81] DEBUG Finished one task (4 of 11) on pass 3 with item id: 456 in 0 m 0.012s won: false Improved: true via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.296 [Thread-86] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 512
+2023-01-23 17:11:35.296 [Thread-83] DEBUG Finished one task (3 of 11) on pass 3 with item id: 1434 in 0 m 0.006s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.296 [Thread-80] DEBUG Finished one task (2 of 11) on pass 3 with item id: 1660 in 0 m 0.012s won: true Improved: true via-: 0 len-: 1026151.3921136856 incomplete(0, 0)
+2023-01-23 17:11:35.302 [Thread-56] DEBUG Scheduling #9 of 11 tasks for item No. 2159 ......
+2023-01-23 17:11:35.302 [Thread-87] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 1746
+2023-01-23 17:11:35.304 [Thread-82] DEBUG Finished one task (5 of 11) on pass 3 with item id: 511 in 0 m 0.016s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.305 [Thread-85] DEBUG Finished one task (6 of 11) on pass 3 with item id: 1440 in 0 m 0.011s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.305 [Thread-56] DEBUG Scheduling #10 of 11 tasks for item No. 2177 ......
+2023-01-23 17:11:35.305 [Thread-88] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 2159
+2023-01-23 17:11:35.307 [Thread-56] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:11:35.308 [Thread-89] DEBUG Start to run OptimizeRouteTask on pass 3 with item id: 2177
+2023-01-23 17:11:35.316 [Thread-86] DEBUG Finished one task (7 of 11) on pass 3 with item id: 512 in 0 m 0.02s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.323 [Thread-89] DEBUG Finished one task (8 of 11) on pass 3 with item id: 2177 in 0 m 0.015s won: true Improved: true via-: 0 len-: 2825095.1082468033 incomplete(0, 0)
+2023-01-23 17:11:35.334 [Thread-87] DEBUG Finished one task (9 of 11) on pass 3 with item id: 1746 in 0 m 0.032s won: true Improved: true via-: 0 len-: 2.637601352521038E7 incomplete(0, 0)
+2023-01-23 17:11:35.336 [Thread-88] DEBUG Finished one task (10 of 11) on pass 3 with item id: 2159 in 0 m 0.031s won: true Improved: true via-: 0 len-: 1.2368443232277489E8 incomplete(0, 0)
+2023-01-23 17:11:35.336 [Thread-56] DEBUG Finished pass #3 in 0 minutes 0.057 s with 5 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:11:35.336 [Thread-56] DEBUG Improved: true, interrupted: false, via#: 2, len: 150611.47621821795, via-: 0, len-: 3837.248729688872
+2023-01-23 17:11:35.337 [Thread-56] TRACE Method 'BatchOptRouteMT.opt_route_pass #3 with 11 items, 2 vias and 154,448.72 trace length running on 15 threads.' was performed in 0.06 seconds.
+2023-01-23 17:11:35.337 [Thread-56] DEBUG Scheduling #0 of 11 tasks for item No. 1746 ......
+2023-01-23 17:11:35.339 [Thread-56] DEBUG Scheduling #1 of 11 tasks for item No. 2177 ......
+2023-01-23 17:11:35.339 [Thread-90] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 1746
+2023-01-23 17:11:35.341 [Thread-56] DEBUG Scheduling #2 of 11 tasks for item No. 1440 ......
+2023-01-23 17:11:35.341 [Thread-91] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 2177
+2023-01-23 17:11:35.343 [Thread-56] DEBUG Scheduling #3 of 11 tasks for item No. 399 ......
+2023-01-23 17:11:35.343 [Thread-92] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 1440
+2023-01-23 17:11:35.345 [Thread-56] DEBUG Scheduling #4 of 11 tasks for item No. 456 ......
+2023-01-23 17:11:35.345 [Thread-93] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 399
+2023-01-23 17:11:35.348 [Thread-56] DEBUG Scheduling #5 of 11 tasks for item No. 1434 ......
+2023-01-23 17:11:35.351 [Thread-56] DEBUG Scheduling #6 of 11 tasks for item No. 512 ......
+2023-01-23 17:11:35.351 [Thread-95] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 1434
+2023-01-23 17:11:35.353 [Thread-93] DEBUG Finished one task (1 of 11) on pass 4 with item id: 399 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.351 [Thread-94] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 456
+2023-01-23 17:11:35.354 [Thread-92] DEBUG Finished one task (2 of 11) on pass 4 with item id: 1440 in 0 m 0.011s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.359 [Thread-95] DEBUG Finished one task (3 of 11) on pass 4 with item id: 1434 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.360 [Thread-96] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 512
+2023-01-23 17:11:35.360 [Thread-56] DEBUG Scheduling #7 of 11 tasks for item No. 511 ......
+2023-01-23 17:11:35.370 [Thread-90] DEBUG Finished one task (4 of 11) on pass 4 with item id: 1746 in 0 m 0.031s won: true Improved: true via-: 0 len-: 2.0309442557245255E7 incomplete(0, 0)
+2023-01-23 17:11:35.370 [Thread-94] DEBUG Finished one task (5 of 11) on pass 4 with item id: 456 in 0 m 0.019s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.370 [Thread-97] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 511
+2023-01-23 17:11:35.370 [Thread-56] DEBUG Scheduling #8 of 11 tasks for item No. 2371 ......
+2023-01-23 17:11:35.374 [Thread-56] DEBUG Scheduling #9 of 11 tasks for item No. 391 ......
+2023-01-23 17:11:35.374 [Thread-98] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 2371
+2023-01-23 17:11:35.376 [Thread-56] DEBUG Scheduling #10 of 11 tasks for item No. 2308 ......
+2023-01-23 17:11:35.376 [Thread-99] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 391
+2023-01-23 17:11:35.379 [Thread-56] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:11:35.379 [Thread-100] DEBUG Start to run OptimizeRouteTask on pass 4 with item id: 2308
+2023-01-23 17:11:35.379 [Thread-96] DEBUG Finished one task (6 of 11) on pass 4 with item id: 512 in 0 m 0.019s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.388 [Thread-99] DEBUG Finished one task (7 of 11) on pass 4 with item id: 391 in 0 m 0.012s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.391 [Thread-97] DEBUG Finished one task (8 of 11) on pass 4 with item id: 511 in 0 m 0.02s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.392 [Thread-100] DEBUG Finished one task (9 of 11) on pass 4 with item id: 2308 in 0 m 0.013s won: true Improved: true via-: 0 len-: 26923.881554603577 incomplete(0, 0)
+2023-01-23 17:11:35.415 [Thread-91] DEBUG Finished one task (10 of 11) on pass 4 with item id: 2177 in 0 m 0.074s won: true Improved: true via-: 0 len-: 3.182991459117794E7 incomplete(0, 0)
+2023-01-23 17:11:35.437 [Thread-98] DEBUG Finished one task (11 of 11) on pass 4 with item id: 2371 in 0 m 0.063s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.437 [Thread-56] DEBUG Finished pass #4 in 0 minutes 0.1 s with 3 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:11:35.438 [Thread-56] DEBUG Improved: true, interrupted: false, via#: 2, len: 149632.09423079708, via-: 0, len-: 979.3819874208712
+2023-01-23 17:11:35.438 [Thread-56] TRACE Method 'BatchOptRouteMT.opt_route_pass #4 with 11 items, 2 vias and 150,611.48 trace length running on 15 threads.' was performed in 0.10 seconds.
+2023-01-23 17:11:35.439 [Thread-56] DEBUG Scheduling #0 of 11 tasks for item No. 1746 ......
+2023-01-23 17:11:35.442 [Thread-56] DEBUG Scheduling #1 of 11 tasks for item No. 391 ......
+2023-01-23 17:11:35.442 [Thread-101] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 1746
+2023-01-23 17:11:35.445 [Thread-56] DEBUG Scheduling #2 of 11 tasks for item No. 1434 ......
+2023-01-23 17:11:35.445 [Thread-102] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 391
+2023-01-23 17:11:35.447 [Thread-56] DEBUG Scheduling #3 of 11 tasks for item No. 456 ......
+2023-01-23 17:11:35.447 [Thread-103] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 1434
+2023-01-23 17:11:35.449 [Thread-56] DEBUG Scheduling #4 of 11 tasks for item No. 1440 ......
+2023-01-23 17:11:35.449 [Thread-104] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 456
+2023-01-23 17:11:35.452 [Thread-56] DEBUG Scheduling #5 of 11 tasks for item No. 399 ......
+2023-01-23 17:11:35.452 [Thread-105] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 1440
+2023-01-23 17:11:35.452 [Thread-102] DEBUG Finished one task (1 of 11) on pass 5 with item id: 391 in 0 m 0.007s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.454 [Thread-56] DEBUG Scheduling #6 of 11 tasks for item No. 511 ......
+2023-01-23 17:11:35.454 [Thread-106] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 399
+2023-01-23 17:11:35.455 [Thread-103] DEBUG Finished one task (2 of 11) on pass 5 with item id: 1434 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.456 [Thread-56] DEBUG Scheduling #7 of 11 tasks for item No. 512 ......
+2023-01-23 17:11:35.456 [Thread-107] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 511
+2023-01-23 17:11:35.458 [Thread-56] DEBUG Scheduling #8 of 11 tasks for item No. 2371 ......
+2023-01-23 17:11:35.458 [Thread-108] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 512
+2023-01-23 17:11:35.460 [Thread-56] DEBUG Scheduling #9 of 11 tasks for item No. 2690 ......
+2023-01-23 17:11:35.460 [Thread-109] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 2371
+2023-01-23 17:11:35.463 [Thread-105] DEBUG Finished one task (4 of 11) on pass 5 with item id: 1440 in 0 m 0.011s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.462 [Thread-110] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 2690
+2023-01-23 17:11:35.462 [Thread-56] DEBUG Scheduling #10 of 11 tasks for item No. 2704 ......
+2023-01-23 17:11:35.461 [Thread-106] DEBUG Finished one task (3 of 11) on pass 5 with item id: 399 in 0 m 0.007s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.467 [Thread-56] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:11:35.468 [Thread-111] DEBUG Start to run OptimizeRouteTask on pass 5 with item id: 2704
+2023-01-23 17:11:35.471 [Thread-104] DEBUG Finished one task (5 of 11) on pass 5 with item id: 456 in 0 m 0.022s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.478 [Thread-110] DEBUG Finished one task (6 of 11) on pass 5 with item id: 2690 in 0 m 0.016s won: true Improved: true via-: 0 len-: 148081.3485479355 incomplete(0, 0)
+2023-01-23 17:11:35.479 [Thread-107] DEBUG Finished one task (7 of 11) on pass 5 with item id: 511 in 0 m 0.023s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.484 [Thread-108] DEBUG Finished one task (8 of 11) on pass 5 with item id: 512 in 0 m 0.025s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.503 [Thread-111] DEBUG Finished one task (9 of 11) on pass 5 with item id: 2704 in 0 m 0.03s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.538 [Thread-101] DEBUG Finished one task (10 of 11) on pass 5 with item id: 1746 in 0 m 0.096s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.605 [Thread-109] DEBUG Finished one task (11 of 11) on pass 5 with item id: 2371 in 0 m 0.145s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.606 [Thread-56] DEBUG Finished pass #5 in 0 minutes 0.166 s with 1 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:11:35.606 [Thread-56] DEBUG Improved: true, interrupted: false, via#: 2, len: 149627.53788161097, via-: 0, len-: 4.55634918611031
+2023-01-23 17:11:35.606 [Thread-56] TRACE Method 'BatchOptRouteMT.opt_route_pass #5 with 11 items, 2 vias and 149,632.09 trace length running on 15 threads.' was performed in 0.17 seconds.
+2023-01-23 17:11:35.607 [Thread-56] DEBUG Scheduling #0 of 11 tasks for item No. 1434 ......
+2023-01-23 17:11:35.610 [Thread-56] DEBUG Scheduling #1 of 11 tasks for item No. 1440 ......
+2023-01-23 17:11:35.610 [Thread-112] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 1434
+2023-01-23 17:11:35.612 [Thread-56] DEBUG Scheduling #2 of 11 tasks for item No. 456 ......
+2023-01-23 17:11:35.612 [Thread-113] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 1440
+2023-01-23 17:11:35.614 [Thread-56] DEBUG Scheduling #3 of 11 tasks for item No. 391 ......
+2023-01-23 17:11:35.614 [Thread-114] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 456
+2023-01-23 17:11:35.616 [Thread-56] DEBUG Scheduling #4 of 11 tasks for item No. 399 ......
+2023-01-23 17:11:35.617 [Thread-115] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 391
+2023-01-23 17:11:35.617 [Thread-112] DEBUG Finished one task (1 of 11) on pass 6 with item id: 1434 in 0 m 0.007s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.619 [Thread-56] DEBUG Scheduling #5 of 11 tasks for item No. 2704 ......
+2023-01-23 17:11:35.619 [Thread-116] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 399
+2023-01-23 17:11:35.622 [Thread-56] DEBUG Scheduling #6 of 11 tasks for item No. 511 ......
+2023-01-23 17:11:35.623 [Thread-117] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 2704
+2023-01-23 17:11:35.625 [Thread-115] DEBUG Finished one task (3 of 11) on pass 6 with item id: 391 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.625 [Thread-113] DEBUG Finished one task (2 of 11) on pass 6 with item id: 1440 in 0 m 0.013s won: true Improved: true via-: 0 len-: 9.5367431640625E-7 incomplete(0, 0)
+2023-01-23 17:11:35.625 [Thread-118] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 511
+2023-01-23 17:11:35.625 [Thread-56] DEBUG Scheduling #7 of 11 tasks for item No. 512 ......
+2023-01-23 17:11:35.628 [Thread-116] DEBUG Finished one task (4 of 11) on pass 6 with item id: 399 in 0 m 0.009s won: false Improved: true via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.631 [Thread-56] DEBUG Scheduling #8 of 11 tasks for item No. 2371 ......
+2023-01-23 17:11:35.632 [Thread-114] DEBUG Finished one task (5 of 11) on pass 6 with item id: 456 in 0 m 0.018s won: false Improved: true via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.632 [Thread-119] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 512
+2023-01-23 17:11:35.634 [Thread-56] DEBUG Scheduling #9 of 11 tasks for item No. 1746 ......
+2023-01-23 17:11:35.634 [Thread-120] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 2371
+2023-01-23 17:11:35.636 [Thread-56] DEBUG Scheduling #10 of 11 tasks for item No. 2762 ......
+2023-01-23 17:11:35.636 [Thread-121] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 1746
+2023-01-23 17:11:35.641 [Thread-56] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:11:35.644 [Thread-122] DEBUG Start to run OptimizeRouteTask on pass 6 with item id: 2762
+2023-01-23 17:11:35.647 [Thread-118] DEBUG Finished one task (6 of 11) on pass 6 with item id: 511 in 0 m 0.022s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.652 [Thread-119] DEBUG Finished one task (7 of 11) on pass 6 with item id: 512 in 0 m 0.021s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.662 [Thread-122] DEBUG Finished one task (8 of 11) on pass 6 with item id: 2762 in 0 m 0.02s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.674 [Thread-121] DEBUG Finished one task (9 of 11) on pass 6 with item id: 1746 in 0 m 0.038s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.691 [Thread-117] DEBUG Finished one task (10 of 11) on pass 6 with item id: 2704 in 0 m 0.069s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.715 [Thread-120] DEBUG Finished one task (11 of 11) on pass 6 with item id: 2371 in 0 m 0.081s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:35.715 [Thread-56] DEBUG Finished pass #6 in 0 minutes 0.108 s with 1 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:11:35.716 [Thread-56] DEBUG Improved: true, interrupted: false, via#: 2, len: 149627.53788161097, via-: 0, len-: 0.0
+2023-01-23 17:11:35.716 [Thread-56] TRACE Method 'BatchOptRouteMT.opt_route_pass #6 with 11 items, 2 vias and 149,627.54 trace length running on 15 threads.' was performed in 0.11 seconds.
+2023-01-23 17:11:35.716 [Thread-56] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 0.66 seconds.
+2023-01-23 17:11:35.717 [Thread-56] INFO  Route optimization was completed in 0.66 seconds and it improved the design by ~2.69%.
+2023-01-23 17:11:35.721 [Thread-56] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 0.89 seconds.
+2023-01-23 17:11:50.127 [Thread-123] INFO  Starting auto-routing...
+2023-01-23 17:11:50.132 [Thread-123] TRACE Method 'BatchAutorouter.autoroute_pass #5 on board 'c0a6a445f672f77c577b07072acc9b5a' making 0 changes' was performed in 0.00 seconds.
+2023-01-23 17:11:50.132 [Thread-123] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.00 seconds.
+2023-01-23 17:11:50.132 [Thread-123] INFO  Auto-routing was completed in 0.00 seconds.
+2023-01-23 17:11:50.132 [Thread-123] INFO  Starting route optimization on 15 threads...
+2023-01-23 17:11:50.133 [Thread-123] DEBUG Scheduling #0 of 11 tasks for item No. 512 ......
+2023-01-23 17:11:50.134 [Thread-123] DEBUG Scheduling #1 of 11 tasks for item No. 1746 ......
+2023-01-23 17:11:50.134 [Thread-124] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 512
+2023-01-23 17:11:50.134 [Thread-123] DEBUG Scheduling #2 of 11 tasks for item No. 2371 ......
+2023-01-23 17:11:50.135 [Thread-125] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1746
+2023-01-23 17:11:50.136 [Thread-123] DEBUG Scheduling #3 of 11 tasks for item No. 2799 ......
+2023-01-23 17:11:50.136 [Thread-126] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 2371
+2023-01-23 17:11:50.137 [Thread-123] DEBUG Scheduling #4 of 11 tasks for item No. 2809 ......
+2023-01-23 17:11:50.137 [Thread-127] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 2799
+2023-01-23 17:11:50.139 [Thread-123] DEBUG Scheduling #5 of 11 tasks for item No. 391 ......
+2023-01-23 17:11:50.139 [Thread-128] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 2809
+2023-01-23 17:11:50.141 [Thread-123] DEBUG Scheduling #6 of 11 tasks for item No. 399 ......
+2023-01-23 17:11:50.141 [Thread-129] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 391
+2023-01-23 17:11:50.143 [Thread-123] DEBUG Scheduling #7 of 11 tasks for item No. 511 ......
+2023-01-23 17:11:50.144 [Thread-127] DEBUG Finished one task (1 of 11) on pass 1 with item id: 2799 in 0 m 0.007s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.145 [Thread-130] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 399
+2023-01-23 17:11:50.146 [Thread-123] DEBUG Scheduling #8 of 11 tasks for item No. 2762 ......
+2023-01-23 17:11:50.146 [Thread-128] DEBUG Finished one task (2 of 11) on pass 1 with item id: 2809 in 0 m 0.007s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.148 [Thread-131] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 511
+2023-01-23 17:11:50.149 [Thread-129] DEBUG Finished one task (3 of 11) on pass 1 with item id: 391 in 0 m 0.007s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.149 [Thread-123] DEBUG Scheduling #9 of 11 tasks for item No. 456 ......
+2023-01-23 17:11:50.150 [Thread-132] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 2762
+2023-01-23 17:11:50.152 [Thread-123] DEBUG Scheduling #10 of 11 tasks for item No. 2704 ......
+2023-01-23 17:11:50.152 [Thread-130] DEBUG Finished one task (4 of 11) on pass 1 with item id: 399 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.153 [Thread-124] DEBUG Finished one task (5 of 11) on pass 1 with item id: 512 in 0 m 0.019s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.155 [Thread-133] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 456
+2023-01-23 17:11:50.156 [Thread-123] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:11:50.156 [Thread-134] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 2704
+2023-01-23 17:11:50.163 [Thread-132] DEBUG Finished one task (6 of 11) on pass 1 with item id: 2762 in 0 m 0.014s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.169 [Thread-131] DEBUG Finished one task (7 of 11) on pass 1 with item id: 511 in 0 m 0.023s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.173 [Thread-133] DEBUG Finished one task (8 of 11) on pass 1 with item id: 456 in 0 m 0.02s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.173 [Thread-125] DEBUG Finished one task (9 of 11) on pass 1 with item id: 1746 in 0 m 0.038s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.182 [Thread-126] DEBUG Finished one task (10 of 11) on pass 1 with item id: 2371 in 0 m 0.046s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.186 [Thread-134] DEBUG Finished one task (11 of 11) on pass 1 with item id: 2704 in 0 m 0.03s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.187 [Thread-123] DEBUG Finished pass #1 in 0 minutes 0.055 s with 0 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:11:50.187 [Thread-123] DEBUG Improved: false, interrupted: false, via#: 0, len: 149627.53788161097, via-: 2, len-: 0.0
+2023-01-23 17:11:50.187 [Thread-123] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 2 vias and 149,627.54 trace length running on 15 threads.' was performed in 0.05 seconds.
+2023-01-23 17:11:50.188 [Thread-123] DEBUG Scheduling #0 of 11 tasks for item No. 2799 ......
+2023-01-23 17:11:50.189 [Thread-123] DEBUG Scheduling #1 of 11 tasks for item No. 2809 ......
+2023-01-23 17:11:50.189 [Thread-135] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 2799
+2023-01-23 17:11:50.190 [Thread-123] DEBUG Scheduling #2 of 11 tasks for item No. 2762 ......
+2023-01-23 17:11:50.191 [Thread-136] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 2809
+2023-01-23 17:11:50.192 [Thread-123] DEBUG Scheduling #3 of 11 tasks for item No. 456 ......
+2023-01-23 17:11:50.192 [Thread-137] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 2762
+2023-01-23 17:11:50.194 [Thread-135] DEBUG Finished one task (1 of 11) on pass 2 with item id: 2799 in 0 m 0.005s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.195 [Thread-123] DEBUG Scheduling #4 of 11 tasks for item No. 399 ......
+2023-01-23 17:11:50.196 [Thread-138] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 456
+2023-01-23 17:11:50.196 [Thread-136] DEBUG Finished one task (2 of 11) on pass 2 with item id: 2809 in 0 m 0.006s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.197 [Thread-123] DEBUG Scheduling #5 of 11 tasks for item No. 391 ......
+2023-01-23 17:11:50.198 [Thread-139] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 399
+2023-01-23 17:11:50.200 [Thread-123] DEBUG Scheduling #6 of 11 tasks for item No. 2704 ......
+2023-01-23 17:11:50.200 [Thread-140] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 391
+2023-01-23 17:11:50.202 [Thread-123] DEBUG Scheduling #7 of 11 tasks for item No. 512 ......
+2023-01-23 17:11:50.202 [Thread-141] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 2704
+2023-01-23 17:11:50.203 [Thread-137] DEBUG Finished one task (3 of 11) on pass 2 with item id: 2762 in 0 m 0.011s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.203 [Thread-139] DEBUG Finished one task (4 of 11) on pass 2 with item id: 399 in 0 m 0.006s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.205 [Thread-123] DEBUG Scheduling #8 of 11 tasks for item No. 511 ......
+2023-01-23 17:11:50.205 [Thread-142] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 512
+2023-01-23 17:11:50.207 [Thread-140] DEBUG Finished one task (5 of 11) on pass 2 with item id: 391 in 0 m 0.007s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.208 [Thread-123] DEBUG Scheduling #9 of 11 tasks for item No. 1746 ......
+2023-01-23 17:11:50.209 [Thread-143] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 511
+2023-01-23 17:11:50.210 [Thread-123] DEBUG Scheduling #10 of 11 tasks for item No. 2371 ......
+2023-01-23 17:11:50.211 [Thread-138] DEBUG Finished one task (6 of 11) on pass 2 with item id: 456 in 0 m 0.016s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.211 [Thread-144] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1746
+2023-01-23 17:11:50.213 [Thread-123] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:11:50.213 [Thread-145] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 2371
+2023-01-23 17:11:50.218 [Thread-142] DEBUG Finished one task (7 of 11) on pass 2 with item id: 512 in 0 m 0.013s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.220 [Thread-143] DEBUG Finished one task (8 of 11) on pass 2 with item id: 511 in 0 m 0.011s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.238 [Thread-144] DEBUG Finished one task (9 of 11) on pass 2 with item id: 1746 in 0 m 0.027s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.255 [Thread-141] DEBUG Finished one task (10 of 11) on pass 2 with item id: 2704 in 0 m 0.053s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.275 [Thread-145] DEBUG Finished one task (11 of 11) on pass 2 with item id: 2371 in 0 m 0.061s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:11:50.275 [Thread-123] DEBUG Finished pass #2 in 0 minutes 0.088 s with 0 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:11:50.275 [Thread-123] DEBUG Improved: false, interrupted: false, via#: 0, len: 149627.53788161097, via-: 2, len-: 0.0
+2023-01-23 17:11:50.276 [Thread-123] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 11 items, 2 vias and 149,627.54 trace length running on 15 threads.' was performed in 0.09 seconds.
+2023-01-23 17:11:50.276 [Thread-123] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 0.14 seconds.
+2023-01-23 17:11:50.276 [Thread-123] INFO  Route optimization was completed in 0.14 seconds.
+2023-01-23 17:11:50.280 [Thread-123] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 0.15 seconds.
+2023-01-23 17:13:07.233 [AWT-EventQueue-0] INFO  Opening 'simpleadapter.dsn'...
+2023-01-23 17:13:07.576 [AWT-EventQueue-0] INFO  Opening 'simpleadapter.rules'...
+2023-01-23 17:13:07.576 [AWT-EventQueue-0] ERROR File 'simpleadapter.rules' was not found.
+2023-01-23 17:13:11.059 [Thread-146] INFO  Starting auto-routing...
+2023-01-23 17:13:11.121 [Thread-146] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board '7a39890471753069ef6caa3b0787c4da' making 20 changes' was performed in 0.06 seconds.
+2023-01-23 17:13:11.129 [Thread-146] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board '523ce08309d0ce9f6c40c01916d733e3' making 11 changes' was performed in 0.01 seconds.
+2023-01-23 17:13:11.131 [Thread-146] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board '9a58a58308a4cafefdd6925737d2aef7' making 0 changes' was performed in 0.00 seconds.
+2023-01-23 17:13:11.131 [Thread-146] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.07 seconds.
+2023-01-23 17:13:11.131 [Thread-146] INFO  Auto-routing was completed in 0.07 seconds.
+2023-01-23 17:13:11.131 [Thread-146] INFO  Starting route optimization on 15 threads...
+2023-01-23 17:13:11.132 [Thread-146] DEBUG Scheduling #0 of 11 tasks for item No. 822 ......
+2023-01-23 17:13:11.133 [Thread-146] DEBUG Scheduling #1 of 11 tasks for item No. 821 ......
+2023-01-23 17:13:11.133 [Thread-147] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 822
+2023-01-23 17:13:11.133 [Thread-146] DEBUG Scheduling #2 of 11 tasks for item No. 63 ......
+2023-01-23 17:13:11.133 [Thread-148] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 821
+2023-01-23 17:13:11.134 [Thread-146] DEBUG Scheduling #3 of 11 tasks for item No. 135 ......
+2023-01-23 17:13:11.134 [Thread-149] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 63
+2023-01-23 17:13:11.135 [Thread-146] DEBUG Scheduling #4 of 11 tasks for item No. 817 ......
+2023-01-23 17:13:11.135 [Thread-150] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 135
+2023-01-23 17:13:11.137 [Thread-146] DEBUG Scheduling #5 of 11 tasks for item No. 206 ......
+2023-01-23 17:13:11.137 [Thread-151] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 817
+2023-01-23 17:13:11.138 [Thread-146] DEBUG Scheduling #6 of 11 tasks for item No. 818 ......
+2023-01-23 17:13:11.138 [Thread-152] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 206
+2023-01-23 17:13:11.138 [Thread-149] DEBUG Finished one task (1 of 11) on pass 1 with item id: 63 in 0 m 0.004s won: true Improved: true via-: 0 len-: 328471.35496234894 incomplete(0, 0)
+2023-01-23 17:13:11.140 [Thread-146] DEBUG Scheduling #7 of 11 tasks for item No. 393 ......
+2023-01-23 17:13:11.140 [Thread-153] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 818
+2023-01-23 17:13:11.140 [Thread-150] DEBUG Finished one task (2 of 11) on pass 1 with item id: 135 in 0 m 0.005s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.141 [Thread-146] DEBUG Scheduling #8 of 11 tasks for item No. 778 ......
+2023-01-23 17:13:11.142 [Thread-154] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 393
+2023-01-23 17:13:11.142 [Thread-148] DEBUG Finished one task (3 of 11) on pass 1 with item id: 821 in 0 m 0.009s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.143 [Thread-152] DEBUG Finished one task (4 of 11) on pass 1 with item id: 206 in 0 m 0.005s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.143 [Thread-146] DEBUG Scheduling #9 of 11 tasks for item No. 642 ......
+2023-01-23 17:13:11.143 [Thread-155] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 778
+2023-01-23 17:13:11.144 [Thread-146] DEBUG Scheduling #10 of 11 tasks for item No. 511 ......
+2023-01-23 17:13:11.145 [Thread-156] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 642
+2023-01-23 17:13:11.145 [Thread-154] DEBUG Finished one task (5 of 11) on pass 1 with item id: 393 in 0 m 0.003s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.146 [Thread-151] DEBUG Finished one task (6 of 11) on pass 1 with item id: 817 in 0 m 0.009s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.146 [Thread-157] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 511
+2023-01-23 17:13:11.146 [Thread-146] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:13:11.151 [Thread-153] DEBUG Finished one task (7 of 11) on pass 1 with item id: 818 in 0 m 0.011s won: true Improved: true via-: 0 len-: 26923.881553649902 incomplete(0, 0)
+2023-01-23 17:13:11.156 [Thread-155] DEBUG Finished one task (8 of 11) on pass 1 with item id: 778 in 0 m 0.013s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.156 [Thread-147] DEBUG Finished one task (9 of 11) on pass 1 with item id: 822 in 0 m 0.023s won: true Improved: true via-: 1 len-: -1.5463486678506088E8 incomplete(0, 0)
+2023-01-23 17:13:11.162 [Thread-157] DEBUG Finished one task (10 of 11) on pass 1 with item id: 511 in 0 m 0.016s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.221 [Thread-156] DEBUG Finished one task (11 of 11) on pass 1 with item id: 642 in 0 m 0.076s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.222 [Thread-146] DEBUG Finished pass #1 in 0 minutes 0.091 s with 3 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:13:11.222 [Thread-146] DEBUG Improved: true, interrupted: false, via#: 0, len: 164363.68663699005, via-: 1, len-: -3532.895901078824
+2023-01-23 17:13:11.222 [Thread-146] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 1 vias and 160,830.79 trace length running on 15 threads.' was performed in 0.09 seconds.
+2023-01-23 17:13:11.223 [Thread-146] DEBUG Scheduling #0 of 11 tasks for item No. 63 ......
+2023-01-23 17:13:11.225 [Thread-146] DEBUG Scheduling #1 of 11 tasks for item No. 135 ......
+2023-01-23 17:13:11.226 [Thread-158] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 63
+2023-01-23 17:13:11.227 [Thread-146] DEBUG Scheduling #2 of 11 tasks for item No. 393 ......
+2023-01-23 17:13:11.227 [Thread-159] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 135
+2023-01-23 17:13:11.229 [Thread-146] DEBUG Scheduling #3 of 11 tasks for item No. 778 ......
+2023-01-23 17:13:11.229 [Thread-160] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 393
+2023-01-23 17:13:11.230 [Thread-158] DEBUG Finished one task (1 of 11) on pass 2 with item id: 63 in 0 m 0.004s won: true Improved: true via-: 0 len-: 328471.35496234894 incomplete(0, 0)
+2023-01-23 17:13:11.231 [Thread-161] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 778
+2023-01-23 17:13:11.231 [Thread-146] DEBUG Scheduling #4 of 11 tasks for item No. 821 ......
+2023-01-23 17:13:11.232 [Thread-159] DEBUG Finished one task (2 of 11) on pass 2 with item id: 135 in 0 m 0.005s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.234 [Thread-160] DEBUG Finished one task (3 of 11) on pass 2 with item id: 393 in 0 m 0.004s won: true Improved: true via-: 0 len-: 1.1044176213554382E7 incomplete(0, 0)
+2023-01-23 17:13:11.234 [Thread-146] DEBUG Scheduling #5 of 11 tasks for item No. 642 ......
+2023-01-23 17:13:11.234 [Thread-162] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 821
+2023-01-23 17:13:11.236 [Thread-146] DEBUG Scheduling #6 of 11 tasks for item No. 964 ......
+2023-01-23 17:13:11.236 [Thread-163] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 642
+2023-01-23 17:13:11.238 [Thread-146] DEBUG Scheduling #7 of 11 tasks for item No. 961 ......
+2023-01-23 17:13:11.238 [Thread-164] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 964
+2023-01-23 17:13:11.239 [Thread-162] DEBUG Finished one task (4 of 11) on pass 2 with item id: 821 in 0 m 0.005s won: true Improved: true via-: 0 len-: 1.152342130521965E7 incomplete(0, 0)
+2023-01-23 17:13:11.239 [Thread-165] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 961
+2023-01-23 17:13:11.239 [Thread-146] DEBUG Scheduling #8 of 11 tasks for item No. 969 ......
+2023-01-23 17:13:11.242 [Thread-146] DEBUG Scheduling #9 of 11 tasks for item No. 1040 ......
+2023-01-23 17:13:11.242 [Thread-166] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 969
+2023-01-23 17:13:11.243 [Thread-164] DEBUG Finished one task (5 of 11) on pass 2 with item id: 964 in 0 m 0.005s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.244 [Thread-146] DEBUG Scheduling #10 of 11 tasks for item No. 974 ......
+2023-01-23 17:13:11.244 [Thread-167] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 1040
+2023-01-23 17:13:11.246 [Thread-146] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:13:11.247 [Thread-168] DEBUG Start to run OptimizeRouteTask on pass 2 with item id: 974
+2023-01-23 17:13:11.248 [Thread-161] DEBUG Finished one task (6 of 11) on pass 2 with item id: 778 in 0 m 0.017s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.248 [Thread-165] DEBUG Finished one task (7 of 11) on pass 2 with item id: 961 in 0 m 0.009s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.249 [Thread-166] DEBUG Finished one task (8 of 11) on pass 2 with item id: 969 in 0 m 0.007s won: true Improved: true via-: 0 len-: 1.9907875E7 incomplete(0, 0)
+2023-01-23 17:13:11.249 [Thread-163] DEBUG Finished one task (9 of 11) on pass 2 with item id: 642 in 0 m 0.013s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.254 [Thread-168] DEBUG Finished one task (10 of 11) on pass 2 with item id: 974 in 0 m 0.007s won: false Improved: true via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.257 [Thread-167] DEBUG Finished one task (11 of 11) on pass 2 with item id: 1040 in 0 m 0.013s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:11.257 [Thread-146] DEBUG Finished pass #2 in 0 minutes 0.034 s with 4 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:13:11.258 [Thread-146] DEBUG Improved: true, interrupted: false, via#: 0, len: 163999.01301667676, via-: 0, len-: 364.6736203132896
+2023-01-23 17:13:11.258 [Thread-146] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 11 items, 0 vias and 164,363.69 trace length running on 15 threads.' was performed in 0.03 seconds.
+2023-01-23 17:13:11.258 [Thread-146] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 0.13 seconds.
+2023-01-23 17:13:11.259 [Thread-146] INFO  Route optimization was completed in 0.13 seconds and it improved the design by ~49.02%.
+2023-01-23 17:13:11.262 [Thread-146] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 0.20 seconds.
+2023-01-23 17:13:15.559 [Thread-169] INFO  Starting auto-routing...
+2023-01-23 17:13:15.562 [Thread-169] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board 'daa201859026894641bbbc98b10fa4b5' making 0 changes' was performed in 0.00 seconds.
+2023-01-23 17:13:15.562 [Thread-169] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.00 seconds.
+2023-01-23 17:13:15.562 [Thread-169] INFO  Auto-routing was completed in 0.00 seconds.
+2023-01-23 17:13:15.562 [Thread-169] INFO  Starting route optimization on 15 threads...
+2023-01-23 17:13:15.563 [Thread-169] DEBUG Scheduling #0 of 11 tasks for item No. 1085 ......
+2023-01-23 17:13:15.564 [Thread-169] DEBUG Scheduling #1 of 11 tasks for item No. 1064 ......
+2023-01-23 17:13:15.564 [Thread-170] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1085
+2023-01-23 17:13:15.565 [Thread-169] DEBUG Scheduling #2 of 11 tasks for item No. 1059 ......
+2023-01-23 17:13:15.565 [Thread-171] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1064
+2023-01-23 17:13:15.565 [Thread-169] DEBUG Scheduling #3 of 11 tasks for item No. 964 ......
+2023-01-23 17:13:15.566 [Thread-172] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1059
+2023-01-23 17:13:15.566 [Thread-169] DEBUG Scheduling #4 of 11 tasks for item No. 961 ......
+2023-01-23 17:13:15.566 [Thread-173] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 964
+2023-01-23 17:13:15.567 [Thread-169] DEBUG Scheduling #5 of 11 tasks for item No. 1125 ......
+2023-01-23 17:13:15.567 [Thread-174] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 961
+2023-01-23 17:13:15.568 [Thread-169] DEBUG Scheduling #6 of 11 tasks for item No. 1078 ......
+2023-01-23 17:13:15.568 [Thread-175] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1125
+2023-01-23 17:13:15.568 [Thread-171] DEBUG Finished one task (1 of 11) on pass 1 with item id: 1064 in 0 m 0.003s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.569 [Thread-172] DEBUG Finished one task (2 of 11) on pass 1 with item id: 1059 in 0 m 0.003s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.569 [Thread-176] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1078
+2023-01-23 17:13:15.569 [Thread-170] DEBUG Finished one task (3 of 11) on pass 1 with item id: 1085 in 0 m 0.005s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.569 [Thread-169] DEBUG Scheduling #7 of 11 tasks for item No. 778 ......
+2023-01-23 17:13:15.570 [Thread-173] DEBUG Finished one task (4 of 11) on pass 1 with item id: 964 in 0 m 0.004s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.571 [Thread-169] DEBUG Scheduling #8 of 11 tasks for item No. 642 ......
+2023-01-23 17:13:15.571 [Thread-177] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 778
+2023-01-23 17:13:15.572 [Thread-175] DEBUG Finished one task (5 of 11) on pass 1 with item id: 1125 in 0 m 0.004s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.572 [Thread-169] DEBUG Scheduling #9 of 11 tasks for item No. 1040 ......
+2023-01-23 17:13:15.572 [Thread-178] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 642
+2023-01-23 17:13:15.573 [Thread-176] DEBUG Finished one task (6 of 11) on pass 1 with item id: 1078 in 0 m 0.004s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.573 [Thread-169] DEBUG Scheduling #10 of 11 tasks for item No. 1120 ......
+2023-01-23 17:13:15.573 [Thread-179] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1040
+2023-01-23 17:13:15.573 [Thread-174] DEBUG Finished one task (7 of 11) on pass 1 with item id: 961 in 0 m 0.006s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.575 [Thread-169] DEBUG Closed task queue of thread pool, not accepting new tasks
+2023-01-23 17:13:15.575 [Thread-180] DEBUG Start to run OptimizeRouteTask on pass 1 with item id: 1120
+2023-01-23 17:13:15.581 [Thread-177] DEBUG Finished one task (8 of 11) on pass 1 with item id: 778 in 0 m 0.01s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.581 [Thread-179] DEBUG Finished one task (9 of 11) on pass 1 with item id: 1040 in 0 m 0.008s won: false Improved: false via-: 0 incomplete(0, 0)
+2023-01-23 17:13:15.583 [Thread-180] DEBUG Finished one task (10 of 11) on pass 1 with item id: 1120 in 0 m 0.008s won: true Improved: true via-: 0 len-: 1208369.9307813644 incomplete(0, 0)
+2023-01-23 17:13:15.607 [Thread-178] DEBUG Finished one task (11 of 11) on pass 1 with item id: 642 in 0 m 0.035s won: true Improved: true via-: 0 len-: 3.2588319684720993E7 incomplete(0, 0)
+2023-01-23 17:13:15.607 [Thread-169] DEBUG Finished pass #1 in 0 minutes 0.044 s with 2 board updates using 15 threads and Greedy strategy & Prioritized item selection
+2023-01-23 17:13:15.607 [Thread-169] DEBUG Improved: true, interrupted: false, via#: 0, len: 163583.8454879161, via-: 0, len-: 415.16752876064857
+2023-01-23 17:13:15.608 [Thread-169] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 0 vias and 163,999.01 trace length running on 15 threads.' was performed in 0.04 seconds.
+2023-01-23 17:13:15.608 [Thread-169] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 0.04 seconds.
+2023-01-23 17:13:15.608 [Thread-169] INFO  Route optimization was completed in 0.04 seconds.
+2023-01-23 17:13:15.611 [Thread-169] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 0.05 seconds.

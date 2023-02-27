@@ -1,0 +1,17 @@
+.692122030100 :1 ;Wurth Elektronik WR-COM Series, Right Angle Through Hole, Version 3.0 Type A USB Connector, Receptacle
+"692122030100"
+*STM J
+*NGS
+*PNM 1=1 2=2 3=3 4=4 5=5 6=6 7=7 8=8 9=9 10=MH1 11=MH2
+*PLB 1="VBUS" 2="D-" 3="D+" 4="GND" 5="STDA_SSRX" 6="STDA_SSRX+" 7="GND_DRAIN" 8="STDA_SSTX" 9="STDA_SSTX+" 10="MH1" 11="MH2"
+*MXP 13
+*DFN 692122030100
+~!Mouser2 Part Number (710-692122030100)
+~!Link Mouser2 Price/Stock (https://www.mouser.com/Search/Refine.aspx?Keyword=710-692122030100)
+~!Manufacturer_Name (Wurth Elektronik)
+~!Manufacturer_Part_Number (692122030100)
+~!Link Datasheet (https://componentsearchengine.com//692122030100.pdf)
+~!Height (7.55mm)
+~!3D_Model (692122030100)
+"692122030100"
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 9.1!U 10.1!U 11.1!U 

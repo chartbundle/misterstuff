@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "SN3257QPWRQ1"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2019-06-01-10:40:30)
+    (mountForm default
+        (footprintRef "SOP65P640X120-16N")
+        (spec "System")
+    )
+)
