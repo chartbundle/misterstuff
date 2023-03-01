@@ -1,3 +1,0 @@
-/home/wormley/shared/git/pico/misterpico/build/pioasm/CMakeFiles/pioasm.dir
-/home/wormley/shared/git/pico/misterpico/build/pioasm/CMakeFiles/edit_cache.dir
-/home/wormley/shared/git/pico/misterpico/build/pioasm/CMakeFiles/rebuild_cache.dir
