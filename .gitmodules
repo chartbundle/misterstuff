@@ -1,0 +1,3 @@
+[submodule "misterpico/tinyusb"]
+	path = misterpico/tinyusb
+	url = https://github.com/hathach/tinyusb/
