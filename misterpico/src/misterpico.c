@@ -1,5 +1,8 @@
 /*
+ * I2C Portions from code by:
  * Copyright (c) 2021 Valentin Milea <valentin.milea@gmail.com>
+ *
+ * Rest original work.
  *
  * SPDX-License-Identifier: MIT
  */
