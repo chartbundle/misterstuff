@@ -1,8 +1,5 @@
 /*
- * I2C Portions from code by:
  * Copyright (c) 2021 Valentin Milea <valentin.milea@gmail.com>
- *
- * Rest original work.
  *
  * SPDX-License-Identifier: MIT
  */
@@ -17,6 +14,9 @@
 #include <string.h>
 #include <unistd.h>
 
+#include "tusb_lwip_glue.h"
+#include "lwipopts.h"
+
 #define STDOUT 1
 #define RLE_ESCAPE 0xd2
 #define NUMPWMOUT 4
@@ -26,6 +26,44 @@
 #define PWMIN_DIV 64
 #define PWMIN_PERIODUS 1389 // 2.5 mS
 #define PWMIN_ROTATE 3      // /2^x
+
+#define PORT_CMD 35310
+#define PORT_OLED 35311
+#define PORT_PWM 35312
+
+
+
+extern struct udp_pcb *l_udp_pcb;
+// #define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
+#define SHAREDBUFLEN 2048
+uint8_t sharedbuf[SHAREDBUFLEN];
+
+
+#define BPREP sharedbuf[0]='\0';
+
+#define BPRINTF(args...) snprintf(sharedbuf+strlen(sharedbuf),SHAREDBUFLEN-strlen(sharedbuf),args)
+#define BFLUSH(x) if(strlen(sharedbuf)>0 ) do_send(x,strlen(sharedbuf))
+
+
+
+void do_send(uint16_t port,uint16_t len) {
+        struct pbuf *p;
+        err_t wr_err;
+        p = pbuf_alloc(PBUF_TRANSPORT,len,PBUF_RAM);
+        
+        memcpy(p->payload,sharedbuf,len);
+        wr_err  = udp_sendto(l_udp_pcb,p,IP_ADDR_BROADCAST,port);
+        if (wr_err) printf("%d\n",wr_err);
+        pbuf_free(p);
+}
+
+void do_send_str(uint16_t port, char *msg) {
+    uint16_t len;
+    len=MIN(strlen(msg),SHAREDBUFLEN-1);
+    memcpy(sharedbuf,msg,len);
+    sharedbuf[len]='\0';
+    do_send(port,len);
+}
 
 static bool text_debug;
 static const uint I2C_SLAVE_ADDRESS = 0x3c;
@@ -142,6 +180,8 @@ static void i2c_slave_handler(i2c_inst_t *i2c, i2c_slave_event_t event)
     }
 }
 
+
+
 static void setup_slave()
 {
     gpio_init(I2C_SLAVE_SDA_PIN);
@@ -169,8 +209,10 @@ static void main_i2c_loop()
         return;
     length = context.len[read_bank];
     memcpy(scratchpad, (void *)context.mem[read_bank], length);
-    if (text_debug)
-        fprintf(stdout, "%d %d %d %d :: ", length, read_bank, context.mem_address, context.max);
+    if (text_debug) {
+        BPREP;
+        BPRINTF("%d %d %d %d :: ", length, read_bank, context.mem_address, context.max);
+    }
     read_bank = context.bank;
     // Simple RLE Coding
     rlelen = 0;
@@ -199,14 +241,16 @@ static void main_i2c_loop()
         if (i<length) a = scratchpad[i];
     }
 
-    if (text_debug)
-        fprintf(stdout, "%d: %X %X\n", rlelen, rlepad[0], rlepad[1]);
-    putchar(0x0e);
-    putchar(0x41);
-    putchar(rlelen & 255);
-    putchar(rlelen >> 8);
-    write(STDOUT, rlepad, rlelen);
-    stdio_flush();
+    if (text_debug) {
+        BPRINTF("%d: %X %X\n", rlelen, rlepad[0], rlepad[1]);
+        BFLUSH(PORT_CMD);
+    }
+    sharedbuf[0]=0x0e;
+    sharedbuf[1]=0x41;
+    sharedbuf[2] = rlelen & 255;
+    sharedbuf[3] = rlelen >> 8;
+    memcpy(sharedbuf+4,rlepad, rlelen);
+    do_send(PORT_OLED,rlelen+4);
 }
 
 void setup_pwm()
@@ -350,16 +394,18 @@ void main_output_loop()
 {
     uint8_t i;
 
-    if (text_debug)
-        fprintf(stdout, "LED: %d %d %d %d\n", pwmin.dutycycle[0], pwmin.dutycycle[1], pwmin.dutycycle[2], pwmin.dutycycle[3]);
-    putchar(0x0e);
-    putchar(0x50);
-    putchar(NUMPWMIN);
+    if (text_debug) {
+        BPREP;
+        BPRINTF("LED: %d %d %d %d\n", pwmin.dutycycle[0], pwmin.dutycycle[1], pwmin.dutycycle[2], pwmin.dutycycle[3]);
+        BFLUSH(PORT_CMD);
+    };
+    sharedbuf[0]=0x0e;
+    sharedbuf[1]=0x50;
+    sharedbuf[2]=NUMPWMIN;
     for (i = 0; i < NUMPWMIN; i++)
-        putchar(pwmin.dutycycle[i]);
-    // - %lu %lu %lu %lu
-    //    pwmin.maxmax,pwmin.maxela,pwmin.maxt,pwmin.maxus);
-    //    pwmin.maxmax=0;
+        sharedbuf[i+3] = pwmin.dutycycle[i];
+    
+    do_send(PORT_PWM,NUMPWMIN+3);
 };
 
 void adc_output_loop()
@@ -376,35 +422,86 @@ void adc_output_loop()
     if (adccount == 16)
     {
         adccount = 0;
-        printf("ADC: ");
+        BPREP;
+        BPRINTF("ADC: ");
         for (i = 0; i < ADCIN_NUM; i++)
         {
-            printf("%d 0x%03x %f V;", i, adctot[i] >> 4, (adctot[i] >> 4) * conversion_factor);
+            BPRINTF("%d 0x%03x %f V;", i, adctot[i] >> 4, (adctot[i] >> 4) * conversion_factor);
             adctot[i] = 0;
         }
-        printf("\n");
+        BPRINTF("\n");
+        BFLUSH(PORT_CMD);
     }
 };
 
-int main()
+void udp_recv_cb(void *arg , struct udp_pcb* upcb, struct pbuf* p, const ip_addr_t* addr, uint16_t port) {
+    uint16_t i;
+    uint8_t c;
+    uint8_t state;
+    uint8_t temp;
+    char *ptr;
+
+    state=0;
+    ptr = (uint8_t *)p->payload;
+    for (i = 0 ; i < p->len ; i++ ) {
+
+        c=ptr[i];
+        {
+            switch (state)
+            {
+            case 0:
+                if (c == 0x02)
+                {
+                    state = 1;
+                };
+                if (c == 'd')
+                    text_debug = true;
+                if (c == 'D')
+                    text_debug = false;
+                break;
+            case 1:
+                if (c == 0x31)
+                    state = 0x80; // GPIO Output
+                if (c == 0x32)
+                    state = 0x90; // PWM Output
+                break;
+            case 0x80:
+                gpioout(c & 0xff);
+                state = 0;
+                break;
+            case 0x90:
+                temp = c & 0xff;
+                state = 0x91;
+                break;
+            case 0x91:
+                pwmout(temp, c & 0xff);
+                state = 0;
+                break;
+            default:
+                state = 0;
+            }
+        };
+    };
+    pbuf_free(p);
+};
+
+
+int main_1()
 {
     uint64_t timeus;
     uint64_t timealarm;
-    uint64_t timeserial = 0;
-    int c;
     uint8_t state;
     uint8_t temp = 0;
     uint8_t mainoutcount = 0;
     uint16_t adcoutcount = 0;
     context.max = 0;
-    stdio_init_all();
-    stdio_set_translate_crlf(&stdio_usb, false);
-    puts("\nDoes a bunch of stuff.");
+    do_send_str(PORT_CMD,"\nDoes a bunch of stuff.\n");
 
     setup_slave();
     setup_pwm();
     setup_gpio();
     setup_adc();
+    udp_recv(l_udp_pcb,udp_recv_cb,NULL);
     state = 0;
     timealarm = time_us_64() + 1000;
     while (1)
@@ -428,45 +525,7 @@ int main()
                 adc_output_loop();
                 adcoutcount = 0;
             }
-            while ((c = getchar_timeout_us(0)) != PICO_ERROR_TIMEOUT)
-            {
-                switch (state)
-                {
-                case 0:
-                    if (c == 0x02)
-                    {
-                        state = 1;
-                        timeserial = timeus;
-                    };
-                    if (c == 'd')
-                        text_debug = true;
-                    if (c == 'D')
-                        text_debug = false;
-                    break;
-                case 1:
-                    if (c == 0x31)
-                        state = 0x80; // GPIO Output
-                    if (c == 0x32)
-                        state = 0x90; // PWM Output
-                    break;
-                case 0x80:
-                    gpioout(c & 0xff);
-                    state = 0;
-                    break;
-                case 0x90:
-                    temp = c & 0xff;
-                    state = 0x91;
-                    break;
-                case 0x91:
-                    pwmout(temp, c & 0xff);
-                    state = 0;
-                    break;
-                default:
-                    state = 0;
-                }
-            };
-            if (state != 0 && timeus - timeserial > SERIAL_TIMEOUTUS)
-                state = 0;
-        };
-    }
+        }
+    };
 };
+
