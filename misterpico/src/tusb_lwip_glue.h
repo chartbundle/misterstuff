@@ -5,9 +5,9 @@
  extern "C" {
 #endif
 
+#include "bsp/board.h"
 #include "tusb.h"
-#include "dhserver.h"
-#include "dnserver.h"
+//#include "dhserver.h"
 #include "lwip/init.h"
 #include "lwip/timeouts.h"
 
