@@ -146,6 +146,35 @@
         )
       )
     )
+    (symbol "Mechanical:MountingHole" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+      (property "Reference" "H" (at 0 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "MountingHole" (at 0 3.175 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "mounting hole" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Mounting Hole without connection" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "MountingHole*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "MountingHole_0_1"
+        (circle (center 0 0) (radius 1.27)
+          (stroke (width 1.27) (type default))
+          (fill (type none))
+        )
+      )
+    )
     (symbol "mouser:692112030100" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
       (property "Reference" "J" (at 19.05 7.62 0)
         (effects (font (size 1.27 1.27)) (justify left))
@@ -450,9 +479,33 @@
     (pin "8" (uuid 43bd1e27-0c86-473d-88e2-354f072115e9))
     (pin "9" (uuid 1883e3b3-ac5d-47f7-961f-d61cb648adfa))
     (instances
-      (project "simpleadapter14"
+      (project "simpleadapter14m"
         (path "/8982432f-a660-42bc-9ec2-b788d20f911f"
           (reference "J1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 96.52 127 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 1ac9db02-eb78-4c54-810f-3d46de976e92)
+    (property "Reference" "H2" (at 99.06 126.365 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "M2.5" (at 99.06 128.905 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5" (at 96.52 127 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 96.52 127 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "simpleadapter14m"
+        (path "/8982432f-a660-42bc-9ec2-b788d20f911f"
+          (reference "H2") (unit 1)
         )
       )
     )
@@ -461,10 +514,10 @@
   (symbol (lib_id "Connector_Generic:Conn_02x07_Odd_Even") (at 123.19 81.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3e0f3729-15c6-408b-ab04-a6e5aa81b3fa)
-    (property "Reference" "J2" (at 124.46 69.85 0)
+    (property "Reference" "J2" (at 124.46 68.58 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Conn_02x05_Odd_Even" (at 124.46 72.39 0)
+    (property "Value" "02x07" (at 124.46 71.12 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical" (at 123.19 81.28 0)
@@ -488,7 +541,7 @@
     (pin "8" (uuid 2be526db-2817-4546-bb05-97f854a03897))
     (pin "9" (uuid 581abad8-5513-4955-af76-e14737a90104))
     (instances
-      (project "simpleadapter14"
+      (project "simpleadapter14m"
         (path "/8982432f-a660-42bc-9ec2-b788d20f911f"
           (reference "J2") (unit 1)
         )
@@ -513,9 +566,33 @@
     )
     (pin "1" (uuid 7da86b0f-9f86-4fe5-88a8-ce446338d531))
     (instances
-      (project "simpleadapter14"
+      (project "simpleadapter14m"
         (path "/8982432f-a660-42bc-9ec2-b788d20f911f"
           (reference "#PWR02") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 81.28 115.57 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid bd599132-72d5-43c7-bb81-2b09bf0043cd)
+    (property "Reference" "H1" (at 83.82 114.935 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "M2.5" (at 83.82 117.475 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5" (at 81.28 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 81.28 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "simpleadapter14m"
+        (path "/8982432f-a660-42bc-9ec2-b788d20f911f"
+          (reference "H1") (unit 1)
         )
       )
     )
@@ -538,7 +615,7 @@
     )
     (pin "1" (uuid 7681056c-8340-4cbf-aab1-addcadf7f529))
     (instances
-      (project "simpleadapter14"
+      (project "simpleadapter14m"
         (path "/8982432f-a660-42bc-9ec2-b788d20f911f"
           (reference "#PWR01") (unit 1)
         )

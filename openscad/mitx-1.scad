@@ -15,6 +15,8 @@ hh=baseh+0.01;
 e=0.1;
 e2=e*2;
 
+// Enable by uncommenting
+
 //pixy=[-145.10,0,0];
 //rockxy=[-75,75,0];
 dexy=[-75,25,0];
@@ -30,6 +32,7 @@ dexy=[-75,25,0];
 
 // holes=0 no holes
 // holes=1 only holes
+
 // Holes for sides
 mountri=3.6/2;
 mountro = 6/2;
@@ -38,8 +41,9 @@ mountro = 6/2;
 mountr0=4.6/2;
 mountr1=4.1/2;
 
-
+// Height of the side holes
 mounth= 3;
+
 mountoff=8;
 mountw=3.25;
 
