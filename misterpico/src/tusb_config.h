@@ -94,13 +94,20 @@
 #define CFG_TUD_ENDPOINT0_SIZE    64
 #endif
 
+
+#define CFG_TUSB_DEBUG 3
 //------------- CLASS -------------//
-#define CFG_TUD_CDC               0
+#define CFG_TUD_CDC               2
 #define CFG_TUD_MSC               0
 #define CFG_TUD_HID               0
 #define CFG_TUD_MIDI              0
 #define CFG_TUD_VENDOR            0
-#define CFG_TUD_ECM_RNDIS               1
+#define CFG_TUD_ECM_RNDIS         1
+
+
+#define CFG_TUD_CDC_EP_BUFSIZE  (256)
+#define CFG_TUD_CDC_RX_BUFSIZE  (256)
+#define CFG_TUD_CDC_TX_BUFSIZE  (256)
 
 #ifdef __cplusplus
  }

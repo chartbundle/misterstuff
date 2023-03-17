@@ -7,9 +7,10 @@
 
 #include "bsp/board.h"
 #include "tusb.h"
-//#include "dhserver.h"
+#include "dhserver.h"
 #include "lwip/init.h"
 #include "lwip/timeouts.h"
+#include "lwip/udp.h"
 
 void init_lwip();
 void wait_for_netif_is_up();

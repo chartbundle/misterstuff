@@ -49,8 +49,9 @@ int main()
 //    struct pbuf *bob;
     err_t wr_err;
     // struct data_out d;
-    // TX 12 RX 13
-    stdio_uart_init_full(uart0,115200,12,13);
+//    // TX 12 RX 13
+    stdio_uart_init_full(uart0,115200,0,1);
+//    stdio_usb_init();
     printf("Hello world\n");
     // Initialize tinyusb, lwip, dhcpd and httpd
     pbuf_init();
@@ -61,8 +62,6 @@ int main()
     wr_err = udp_bind(l_udp_pcb, IP_ADDR_ANY, 35310);
     printf("udp bind %d\n",wr_err);
     ip_set_option(l_udp_pcb, SOF_BROADCAST);
-    queue_init(&send_q, sizeof(struct data_out),1);
-    queue_init(&recv_q , sizeof(struct pbuf *),4);
 
     sleep_ms(10);
 

@@ -31,8 +31,6 @@
 #define PORT_OLED 35311
 #define PORT_PWM 35312
 
-
-
 extern struct udp_pcb *l_udp_pcb;
 // #define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
 #define SHAREDBUFLEN 2048
@@ -41,8 +39,8 @@ uint8_t sharedbuf[SHAREDBUFLEN];
 
 #define BPREP sharedbuf[0]='\0';
 
-#define BPRINTF(args...) snprintf(sharedbuf+strlen(sharedbuf),SHAREDBUFLEN-strlen(sharedbuf),args)
-#define BFLUSH(x) if(strlen(sharedbuf)>0 ) do_send(x,strlen(sharedbuf))
+#define BPRINTF(args...) snprintf((char *)(sharedbuf+strlen((char *)sharedbuf)),SHAREDBUFLEN-strlen((char *)sharedbuf),args)
+#define BFLUSH(x) if(strlen((char *)sharedbuf)>0 ) do_send(x,strlen((char *)sharedbuf))
 
 
 
@@ -53,7 +51,8 @@ void do_send(uint16_t port,uint16_t len) {
         
         memcpy(p->payload,sharedbuf,len);
         wr_err  = udp_sendto(l_udp_pcb,p,IP_ADDR_BROADCAST,port);
-        if (wr_err) printf("%d\n",wr_err);
+        (void) (wr_err);
+        // if (wr_err) printf("wr_err: %d\n",wr_err);
         pbuf_free(p);
 }
 
@@ -96,8 +95,10 @@ const uint8_t pwmoutdivint[] = {255, 255, 255, 255};
 const uint8_t pwmoutdivfrac[] = {0, 0, 0, 0};
 const uint8_t pwmoutshift[] = {0, 0, 0, 0};
 
-#define GPIOOUT_NUM 11
-const uint8_t gpiooutpins[] = {0, 1, 2, 3, 7, 8, 11, 13, 16, 18, 20};
+//#define GPIOOUT_NUM 11
+//const uint8_t gpiooutpins[] = {0, 1, 2, 3, 7, 8, 11, 13, 16, 18, 20};
+#define GPIOOUT_NUM 9
+const uint8_t gpiooutpins[] = {2, 3, 7, 8, 11, 13, 16, 18, 20};
 
 #define ADCIN_NUM 5
 const uint8_t adcinpins[] = {26, 27, 28, 29, 255};
@@ -285,6 +286,7 @@ void setup_gpio()
     for (i = 0; i < GPIOOUT_NUM; i++)
     {
         gpio_init(gpiooutpins[i]);
+        gpio_pull_up(gpiooutpins[i]);
     }
 };
 
@@ -435,13 +437,16 @@ void adc_output_loop()
 };
 
 void udp_recv_cb(void *arg , struct udp_pcb* upcb, struct pbuf* p, const ip_addr_t* addr, uint16_t port) {
+    (void)(arg);
+    (void)(upcb);
+    (void)(addr);
+    (void)(port);
     uint16_t i;
     uint8_t c;
-    uint8_t state;
-    uint8_t temp;
-    char *ptr;
+    uint8_t state = 0 ;
+    uint8_t temp = 0;
+    uint8_t *ptr;
 
-    state=0;
     ptr = (uint8_t *)p->payload;
     for (i = 0 ; i < p->len ; i++ ) {
 
@@ -490,8 +495,6 @@ int main_1()
 {
     uint64_t timeus;
     uint64_t timealarm;
-    uint8_t state;
-    uint8_t temp = 0;
     uint8_t mainoutcount = 0;
     uint16_t adcoutcount = 0;
     context.max = 0;
@@ -502,7 +505,6 @@ int main_1()
     setup_gpio();
     setup_adc();
     udp_recv(l_udp_pcb,udp_recv_cb,NULL);
-    state = 0;
     timealarm = time_us_64() + 1000;
     while (1)
     {
