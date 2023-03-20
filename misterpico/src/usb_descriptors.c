@@ -24,7 +24,7 @@
  */
 
 #include "tusb.h"
-#include "pico/stdio_usb/reset_interface.h"
+// #include "pico/stdio_usb/reset_interface.h"
 #include "pico/unique_id.h"
 
 /* A combination of interfaces must have a unique product id, since PC will save device driver after the first plug.
@@ -46,8 +46,8 @@ enum
   STRID_SERIAL,
   STRID_INTERFACE,
   STRID_MAC,
-  USBD_STR_CDC,
-  USBD_STR_RPI_RESET
+//  USBD_STR_CDC,
+//  USBD_STR_RPI_RESET
 
 };
 
@@ -55,9 +55,9 @@ enum
 {
   ITF_NUM_CDC = 0,
   ITF_NUM_CDC_DATA,
-  ITF_NUM_CDC_SERIAL,
-  ITF_NUM_CDC_SERIAL_DATA,
-  ITF_NUM_CDC_RESET,
+//  ITF_NUM_CDC_SERIAL,
+//  ITF_NUM_CDC_SERIAL_DATA,
+//  ITF_NUM_CDC_RESET,
   ITF_NUM_TOTAL
 };
 
@@ -71,9 +71,7 @@ enum
 #define TUD_RPI_RESET_DESCRIPTOR(_itfnum, _stridx) \
   /* Interface */                                  \
   9, TUSB_DESC_INTERFACE, _itfnum, 0, 0, TUSB_CLASS_VENDOR_SPECIFIC, RESET_INTERFACE_SUBCLASS, RESET_INTERFACE_PROTOCOL, _stridx,
-#define TUD_RPI_RESET_DESC_LEN 9
 
-// #define USBD_DESC_LEN (TUD_CONFIG_DESC_LEN + TUD_CDC_DESC_LEN + TUD_RPI_RESET_DESC_LEN)
 
 #define USBD_CDC_CMD_MAX_SIZE (8)
 #define USBD_CDC_IN_OUT_MAX_SIZE (64)
@@ -123,11 +121,12 @@ uint8_t const *tud_descriptor_device_cb(void)
 //--------------------------------------------------------------------+
 // Configuration Descriptor
 //--------------------------------------------------------------------+
-#define TUD_RPI_RESET_DESC_LEN 9
+//#define TUD_RPI_RESET_DESC_LEN 9
+#define TUD_RPI_RESET_DESC_LEN 0
 // #define USBD_DESC_LEN (TUD_CONFIG_DESC_LEN + TUD_CDC_DESC_LEN + TUD_RPI_RESET_DESC_LEN)
 
-#define MAIN_CONFIG_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_RNDIS_DESC_LEN + TUD_CDC_DESC_LEN + TUD_RPI_RESET_DESC_LEN)
-#define ALT_CONFIG_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_CDC_ECM_DESC_LEN + TUD_CDC_DESC_LEN + TUD_RPI_RESET_DESC_LEN)
+#define MAIN_CONFIG_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_RNDIS_DESC_LEN )
+#define ALT_CONFIG_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_CDC_ECM_DESC_LEN )
 
 #define EPNUM_NET_NOTIF 0x81
 #define EPNUM_NET_OUT 0x02
@@ -144,10 +143,12 @@ static uint8_t const rndis_configuration[] =
 
         // Interface number, string index, EP notification address and size, EP data address (out, in) and size.
         TUD_RNDIS_DESCRIPTOR(ITF_NUM_CDC, STRID_INTERFACE, EPNUM_NET_NOTIF, 8, EPNUM_NET_OUT, EPNUM_NET_IN, CFG_TUD_NET_ENDPOINT_SIZE),
-        TUD_CDC_DESCRIPTOR(ITF_NUM_CDC_SERIAL, USBD_STR_CDC, USBD_CDC_EP_CMD,
-                           USBD_CDC_CMD_MAX_SIZE, USBD_CDC_EP_OUT, USBD_CDC_EP_IN, USBD_CDC_IN_OUT_MAX_SIZE),
+//        TUD_CDC_DESCRIPTOR(ITF_NUM_CDC_SERIAL, USBD_STR_CDC, USBD_CDC_EP_CMD,
+//                           USBD_CDC_CMD_MAX_SIZE, USBD_CDC_EP_OUT, USBD_CDC_EP_IN, USBD_CDC_IN_OUT_MAX_SIZE),
 
-        TUD_RPI_RESET_DESCRIPTOR(ITF_NUM_CDC_RESET, USBD_STR_RPI_RESET)};
+//        TUD_RPI_RESET_DESCRIPTOR(ITF_NUM_CDC_RESET, USBD_STR_RPI_RESET)
+
+    };
 
 static uint8_t const ecm_configuration[] =
     {
@@ -156,12 +157,12 @@ static uint8_t const ecm_configuration[] =
 
         // Interface number, description string index, MAC address string index, EP notification address and size, EP data address (out, in), and size, max segment size.
         TUD_CDC_ECM_DESCRIPTOR(ITF_NUM_CDC, STRID_INTERFACE, STRID_MAC, EPNUM_NET_NOTIF, 64, EPNUM_NET_OUT, EPNUM_NET_IN, CFG_TUD_NET_ENDPOINT_SIZE, CFG_TUD_NET_MTU),
-        TUD_CDC_DESCRIPTOR(ITF_NUM_CDC_SERIAL, USBD_STR_CDC, USBD_CDC_EP_CMD,
-                           USBD_CDC_CMD_MAX_SIZE, USBD_CDC_EP_OUT, USBD_CDC_EP_IN, USBD_CDC_IN_OUT_MAX_SIZE),
+//        TUD_CDC_DESCRIPTOR(ITF_NUM_CDC_SERIAL, USBD_STR_CDC, USBD_CDC_EP_CMD,
+//                           USBD_CDC_CMD_MAX_SIZE, USBD_CDC_EP_OUT, USBD_CDC_EP_IN, USBD_CDC_IN_OUT_MAX_SIZE),
 
-        TUD_RPI_RESET_DESCRIPTOR(ITF_NUM_CDC_RESET, USBD_STR_RPI_RESET)
+//        TUD_RPI_RESET_DESCRIPTOR(ITF_NUM_CDC_RESET, USBD_STR_RPI_RESET)
 
-};
+    };
 
 // Configuration array: RNDIS and CDC-ECM
 // - Windows only works with RNDIS
@@ -193,8 +194,8 @@ static char const *string_desc_arr[] =
         [STRID_PRODUCT] = "MiSTer Pico 169.254.89.1", // Product
         //[STRID_SERIAL]       = "123456",                      // Serial
         [STRID_INTERFACE] = "TinyUSB Network Interface", // Interface Description
-        [USBD_STR_CDC] = "Board CDC",
-        [USBD_STR_RPI_RESET] = "Reset"
+//        [USBD_STR_CDC] = "Board CDC",
+//        [USBD_STR_RPI_RESET] = "Reset"
 
         // STRID_MAC index is handled separately
         // STRID_SERIAL index is handled seperately

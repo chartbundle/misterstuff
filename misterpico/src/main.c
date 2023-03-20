@@ -51,6 +51,7 @@ int main()
     // struct data_out d;
 //    // TX 12 RX 13
     stdio_uart_init_full(uart0,115200,0,1);
+//    stdio_init_all();
 //    stdio_usb_init();
     printf("Hello world\n");
     // Initialize tinyusb, lwip, dhcpd and httpd

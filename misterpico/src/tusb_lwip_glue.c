@@ -177,11 +177,12 @@ uint16_t tud_network_xmit_cb(uint8_t *dst, void *ref, uint16_t arg)
 
 void service_traffic(void)
 {
+    err_t rv;
     /* handle any packet received by tud_network_recv_cb() */
     if (received_frame)
     {
-      ethernet_input(received_frame, &netif_data);
-      pbuf_free(received_frame);
+      rv = ethernet_input(received_frame, &netif_data);
+      if (rv != ERR_OK ) pbuf_free(received_frame);
       received_frame = NULL;
       tud_network_recv_renew();
     }
