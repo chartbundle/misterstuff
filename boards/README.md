@@ -1,8 +1,10 @@
 Various adapter boards for MiSTer and MT32-pi
 
-simpleadapter: USB3 Male to 10 pin header for connection to MT32PiPico
+simpleadapter14m: USB3 Male to 14 pin header
 
-userioswitch: SNAC/User-IO 2 port Switch
+simpleadapter14f: USB3 Female to 14 pin header
+
+userioswitchhdr: SNAC/User-IO 2 port Switch uses 14 pin headers matching the above
 
 levelshifter: Experimental level shifter with single IC
 
