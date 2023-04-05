@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <i2c_fifo.h>
-#include <i2c_slave.h>
+#include <pico/i2c_slave.h>
 #include <hardware/pwm.h>
 #include <hardware/clocks.h>
 #include <hardware/adc.h>
@@ -95,10 +94,10 @@ const uint8_t pwmoutdivint[] = {255, 255, 255, 255};
 const uint8_t pwmoutdivfrac[] = {0, 0, 0, 0};
 const uint8_t pwmoutshift[] = {0, 0, 0, 0};
 
-//#define GPIOOUT_NUM 11
-//const uint8_t gpiooutpins[] = {0, 1, 2, 3, 7, 8, 11, 13, 16, 18, 20};
-#define GPIOOUT_NUM 9
-const uint8_t gpiooutpins[] = {2, 3, 7, 8, 11, 13, 16, 18, 20};
+#define GPIOOUT_NUM 11
+const uint8_t gpiooutpins[] = {0, 1, 2, 3, 7, 8, 11, 13, 16, 18, 20};
+//#define GPIOOUT_NUM 9
+//const uint8_t gpiooutpins[] = {2, 3, 7, 8, 11, 13, 16, 18, 20};
 
 #define ADCIN_NUM 5
 const uint8_t adcinpins[] = {26, 27, 28, 29, 255};
@@ -498,13 +497,14 @@ int main_1()
     uint8_t mainoutcount = 0;
     uint16_t adcoutcount = 0;
     context.max = 0;
+    text_debug=1;
     do_send_str(PORT_CMD,"\nDoes a bunch of stuff.\n");
 
     setup_slave();
     setup_pwm();
     setup_gpio();
     setup_adc();
-    udp_recv(l_udp_pcb,udp_recv_cb,NULL);
+//    udp_recv(l_udp_pcb,udp_recv_cb,NULL);
     timealarm = time_us_64() + 1000;
     while (1)
     {

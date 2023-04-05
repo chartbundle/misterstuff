@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <i2c_fifo.h>
-#include <i2c_slave.h>
+#include "Wire.h"
 #include <pico/stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -28,35 +27,23 @@ static struct
 {
     uint8_t mem[256];
     uint8_t mem_address;
-    bool mem_address_written;
 } context;
 
-// Our handler is called from the I2C ISR, so it must complete quickly. Blocking calls /
-// printing to stdio may interfere with interrupt handling.
-static void i2c_slave_handler(i2c_inst_t *i2c, i2c_slave_event_t event) {
-    switch (event) {
-    case I2C_SLAVE_RECEIVE: // master has written some data
-        if (!context.mem_address_written) {
-            // writes always start with the memory address
-            context.mem_address = i2c_read_byte(i2c);
-            context.mem_address_written = true;
-        } else {
-            // save into memory
-            context.mem[context.mem_address] = i2c_read_byte(i2c);
-            context.mem_address++;
-        }
-        break;
-    case I2C_SLAVE_REQUEST: // master is requesting data
-        // load from memory
-        i2c_write_byte(i2c, context.mem[context.mem_address]);
-        context.mem_address++;
-        break;
-    case I2C_SLAVE_FINISH: // master has signalled Stop / Restart
-        context.mem_address_written = false;
-        break;
-    default:
-        break;
+static void slave_on_receive(int count) {
+    // writes always start with the memory address
+    hard_assert(Wire.available());
+    context.mem_address = (uint8_t)Wire.read();
+
+    while (Wire.available()) {
+        // save into memory
+        context.mem[context.mem_address++] = (uint8_t)Wire.read();
     }
+}
+
+static void slave_on_request() {
+    // load from memory
+    uint8_t value = context.mem[context.mem_address++];
+    Wire.write(value);
 }
 
 static void setup_slave() {
@@ -69,8 +56,13 @@ static void setup_slave() {
     gpio_pull_up(I2C_SLAVE_SCL_PIN);
 
     i2c_init(i2c0, I2C_BAUDRATE);
-    // configure I2C0 for slave mode
-    i2c_slave_init(i2c0, I2C_SLAVE_ADDRESS, &i2c_slave_handler);
+
+    // setup Wire for slave mode
+    Wire.onReceive(slave_on_receive);
+    Wire.onRequest(slave_on_request);
+    // in this implementation, the user is responsible for initializing the I2C instance and GPIO
+    // pins before calling Wire::begin()
+    Wire.begin(I2C_SLAVE_ADDRESS);
 }
 
 static void run_master() {
@@ -85,36 +77,47 @@ static void run_master() {
 
     i2c_init(i2c1, I2C_BAUDRATE);
 
+    // setup Wire for master mode on i2c1
+    Wire1.begin();
+
     for (uint8_t mem_address = 0;; mem_address = (mem_address + 32) % 256) {
         char msg[32];
         snprintf(msg, sizeof(msg), "Hello, I2C slave! - 0x%02X", mem_address);
         uint8_t msg_len = strlen(msg);
 
-        uint8_t buf[32];
-        buf[0] = mem_address;
-        memcpy(buf + 1, msg, msg_len);
         // write message at mem_address
         printf("Write at 0x%02X: '%s'\n", mem_address, msg);
-        int count = i2c_write_blocking(i2c1, I2C_SLAVE_ADDRESS, buf, 1 + msg_len, false);
-        if (count < 0) {
+        Wire1.beginTransmission(I2C_SLAVE_ADDRESS);
+        Wire1.write(mem_address);
+        Wire1.write((const uint8_t *)msg, msg_len);
+        uint8_t result = Wire1.endTransmission(true /* sendStop */);
+        if (result != 0) {
             puts("Couldn't write to slave, please check your wiring!");
             return;
         }
-        hard_assert(count == 1 + msg_len);
 
         // seek to mem_address
-        count = i2c_write_blocking(i2c1, I2C_SLAVE_ADDRESS, buf, 1, true);
-        hard_assert(count == 1);
+        Wire1.beginTransmission(I2C_SLAVE_ADDRESS);
+        Wire1.write(mem_address);
+        result = Wire1.endTransmission(false /* sendStop */);
+        hard_assert(result == 0);
+        uint8_t buf[32];
         // partial read
         uint8_t split = 5;
-        count = i2c_read_blocking(i2c1, I2C_SLAVE_ADDRESS, buf, split, true);
+        uint8_t count = Wire1.requestFrom(I2C_SLAVE_ADDRESS, split, false /* sendStop */);
         hard_assert(count == split);
+        for (size_t i = 0; i < count; i++) {
+            buf[i] = Wire1.read();
+        }
         buf[count] = '\0';
         printf("Read  at 0x%02X: '%s'\n", mem_address, buf);
         hard_assert(memcmp(buf, msg, split) == 0);
         // read the remaining bytes, continuing from last address
-        count = i2c_read_blocking(i2c1, I2C_SLAVE_ADDRESS, buf, msg_len - split, false);
-        hard_assert(count == msg_len - split);
+        count = Wire1.requestFrom(I2C_SLAVE_ADDRESS, msg_len - split, true /* sendStop */);
+        hard_assert(count == (size_t)(msg_len - split));
+        for (size_t i = 0; i < count; i++) {
+            buf[i] = Wire1.read();
+        }
         buf[count] = '\0';
         printf("Read  at 0x%02X: '%s'\n", mem_address + split, buf);
         hard_assert(memcmp(buf, msg + split, msg_len - split) == 0);
@@ -126,18 +129,7 @@ static void run_master() {
 
 int main() {
     stdio_init_all();
-
-    int startupDelay = 9;
-    for (int i = 1; i <= startupDelay; ++i) {
-        printf("Waiting %d seconds to start: %d\r\n", startupDelay, i);
-        sleep_ms(1000);
-    }
-    printf("\e[2J\e[H"); // clear screen and go to home position
-
-    printf("\nI2C slave example");
-    printf("rp2040_chip_version: %u \r\n", rp2040_chip_version());
-    printf("rp2040_rom_version: %u \r\n", rp2040_rom_version());
-    printf("get_core_num: %u \r\n\r\n", get_core_num());
+    puts("\nI2C slave example with Wire API");
 
     setup_slave();
     run_master();

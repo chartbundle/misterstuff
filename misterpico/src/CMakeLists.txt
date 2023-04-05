@@ -9,12 +9,13 @@ pico_add_extra_outputs(misterpico)
 
 target_compile_options(misterpico PRIVATE -Wall)
 
-pico_enable_stdio_uart(misterpico 1)
-pico_enable_stdio_usb(misterpico 0)
-pico_enable_stdio_semihosting(misterpico 0)
+# pico_enable_stdio_uart(misterpico 1)
+# pico_enable_stdio_usb(misterpico 0)
+# pico_enable_stdio_semihosting(misterpico 0)
 
 # add_compile_definitions(CFG_TUSB_DEBUG=3)
-target_link_libraries(misterpico i2c_slave pico_stdio pico_stdlib pico_multicore pico_unique_id hardware_pwm hardware_clocks hardware_adc tinyusb_device tinyusb_board pico_lwip pico_lwip_arch)
+# add_compile_definitions(CFG_TUSB_DEBUG=3)
+target_link_libraries(misterpico pico_i2c_slave hardware_i2c pico_stdlib pico_multicore pico_unique_id hardware_pwm hardware_clocks hardware_adc tinyusb_device tinyusb_board pico_lwip pico_lwip_arch)
 target_include_directories(misterpico PRIVATE
         ${PICO_TINYUSB_PATH}/lib/networking
         ${CMAKE_CURRENT_LIST_DIR}
