@@ -1,3 +1,11 @@
+![](assembled.jpg)
+
+One User IO Switch with headers.
+One USB Male with a socket on the bottom.
+One USB Female with a socket on the bottom.
+One USB Male with headers on a ribbon cable.
+
+
 Various adapter boards for MiSTer and MT32-pi
 
 simpleadapter14m: USB3 Male to 14 pin header
