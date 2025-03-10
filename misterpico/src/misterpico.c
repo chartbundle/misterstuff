@@ -434,7 +434,7 @@ void adc_output_loop()
         for (i = 0; i < ADCIN_NUM; i++)
         {
             if (text_debug) {
-                BPRINTF("%d 0x%03x %f V;", i, adctot[i] >> 4);
+                BPRINTF("%d 0x%03x ;", i, adctot[i] >> 4);
             };
             sharedbuf[(i*2)+3] = adctot >>12;
             sharedbuf[(i*2)+4] = (adctot >>4) & 0xff;
