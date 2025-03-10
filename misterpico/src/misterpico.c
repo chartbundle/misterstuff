@@ -29,6 +29,7 @@
 #define PORT_CMD 35310
 #define PORT_OLED 35311
 #define PORT_PWM 35312
+#define PORT_ADC 35313
 
 extern struct udp_pcb *l_udp_pcb;
 // #define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
@@ -423,15 +424,28 @@ void adc_output_loop()
     if (adccount == 16)
     {
         adccount = 0;
+        if (text_debug) {
         BPREP;
         BPRINTF("ADC: ");
+        }
+        sharedbuf[0]=0x0e;
+        sharedbuf[1]=0x56;
+        sharedbuf[2]=ADCIN_NUM;
         for (i = 0; i < ADCIN_NUM; i++)
         {
-            BPRINTF("%d 0x%03x %f V;", i, adctot[i] >> 4);
+            if (text_debug) {
+                BPRINTF("%d 0x%03x %f V;", i, adctot[i] >> 4);
+            };
+            sharedbuf[(i*2)+3] = adctot >>12;
+            sharedbuf[(i*2)+4] = (adctot >>4) & 0xff;
             adctot[i] = 0;
         }
-        BPRINTF("\n");
-        BFLUSH(PORT_CMD);
+        if (text_debug) {
+            BPRINTF("\n");
+            BFLUSH(PORT_CMD);
+        }
+        do_send(PORT_ADC,(ADCIN_NUM*2)+3);
+
     }
 };
 
