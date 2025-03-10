@@ -412,7 +412,7 @@ void main_output_loop()
 void adc_output_loop()
 {
     uint8_t i;
-    const float conversion_factor = 3.3f / (1 << 12);
+//    const float conversion_factor = 3.3f / (1 << 12);
 
     adccount++;
     for (i = 0; i < ADCIN_NUM; i++)
@@ -427,7 +427,7 @@ void adc_output_loop()
         BPRINTF("ADC: ");
         for (i = 0; i < ADCIN_NUM; i++)
         {
-            BPRINTF("%d 0x%03x %f V;", i, adctot[i] >> 4, (adctot[i] >> 4) * conversion_factor);
+            BPRINTF("%d 0x%03x %f V;", i, adctot[i] >> 4);
             adctot[i] = 0;
         }
         BPRINTF("\n");
