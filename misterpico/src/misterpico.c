@@ -8,12 +8,15 @@
 #include <hardware/pwm.h>
 #include <hardware/clocks.h>
 #include <hardware/adc.h>
+#include <hardware/timer.h>
 #include <pico/stdlib.h>
+#include <lwip/ip.h>
+#include <lwip/udp.h>
+#include <pico_1wire.h>
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 
-#include "tusb_lwip_glue.h"
 #include "lwipopts.h"
 
 #define STDOUT 1
@@ -30,11 +33,18 @@
 #define PORT_OLED 35311
 #define PORT_PWM 35312
 #define PORT_ADC 35313
+#define PORT_ONEWIRE 35314
 
 extern struct udp_pcb *l_udp_pcb;
 // #define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
 #define SHAREDBUFLEN 2048
 uint8_t sharedbuf[SHAREDBUFLEN];
+#define MAX_OWDEVICES 8
+alarm_pool_t *core1alarms;
+pico_1wire_t *owctx;
+uint64_t ow_devices[MAX_OWDEVICES];
+uint8_t ow_devicecount=0;
+#define ONEWIRELOOPMS 23
 
 
 #define BPREP sharedbuf[0]='\0';
@@ -312,7 +322,7 @@ void pwmout(uint8_t num, uint8_t val)
     pwm_set_chan_level(pwmoutslice[num], PWM_CHAN_A, val << pwmoutshift[num]);
 }
 
-void main_pwm_loop()
+bool main_pwm_loop(__unused struct repeating_timer *repeatingtimer)
 {
     uint8_t i;
     uint32_t t;
@@ -376,6 +386,7 @@ void main_pwm_loop()
         pwmin.startus = time_us_32();
         pwmin.measuring = true;
     }
+    return(true);
 };
 
 void setup_adc()
@@ -410,6 +421,66 @@ void main_output_loop()
     do_send(PORT_PWM,NUMPWMIN+3);
 };
 
+bool onewire_running=false;
+
+void onewire_output_loop() {
+    static uint16_t ourms=0;
+    static uint8_t nextdevice=0;
+    bool do_increment=true;
+    uint8_t res;
+    // Centidegrees: degrees C*100
+    uint16_t temp;
+    if (! onewire_running) {
+        onewire_running=true;
+// Two states
+// Kick Off conversion
+// 750mS later
+// Retrieve all data
+// Expect to be called more or less every ONEWIRELOOP mS
+    if (ourms == 0 ) {
+       res=pico_1wire_convert_temperature(owctx,0,false);
+    }
+    if (ourms >= 750) {
+        if (nextdevice>=ow_devicecount) {
+            nextdevice=0;
+            ourms=0;
+            do_increment=false;
+        } else {
+            res=pico_1wire_get_temperature(owctx,ow_devices[nextdevice],&temp);
+            if (res) {
+                BPREP;
+                BPRINTF("OWFAIL: dev %d addr %llX\n",nextdevice,ow_devices[nextdevice]);
+                BFLUSH(PORT_CMD);
+            } else {
+            if (text_debug) {
+                BPREP;
+                BPRINTF("OW: dev %d %d C100\n", nextdevice,temp);
+                BFLUSH(PORT_CMD);
+            };
+            sharedbuf[0]=0x0e;
+            sharedbuf[1]=0x52;
+            sharedbuf[2]=nextdevice;
+            sharedbuf[3]=temp & 255;
+            sharedbuf[4]=temp >> 8;
+            do_send(PORT_ONEWIRE,5);
+            };
+            nextdevice++;
+        }
+
+
+
+    }
+
+
+    if (do_increment) ourms += ONEWIRELOOPMS;
+    onewire_running=false;
+        
+    } else {
+        ourms += ONEWIRELOOPMS;
+    }
+
+}
+
 void adc_output_loop()
 {
     uint8_t i;
@@ -421,7 +492,7 @@ void adc_output_loop()
         adc_select_input(i);
         adctot[i] += adc_read();
     }
-    if (adccount == 16)
+    if (adccount >= 16)
     {
         adccount = 0;
         if (text_debug) {
@@ -436,8 +507,8 @@ void adc_output_loop()
             if (text_debug) {
                 BPRINTF("%d 0x%03x ;", i, adctot[i] >> 4);
             };
-            sharedbuf[(i*2)+3] = adctot >>12;
-            sharedbuf[(i*2)+4] = (adctot >>4) & 0xff;
+            sharedbuf[(i*2)+3] = adctot[i] >>12;
+            sharedbuf[(i*2)+4] = (adctot[i] >>4) & 0xff;
             adctot[i] = 0;
         }
         if (text_debug) {
@@ -503,13 +574,59 @@ void udp_recv_cb(void *arg , struct udp_pcb* upcb, struct pbuf* p, const ip_addr
     pbuf_free(p);
 };
 
+void loop_1() {
+    static uint64_t timeus,timealarm;
+    static uint8_t mainoutcount,adcoutcount,onewireoutcount;
+    static uint16_t timey;
+    if (timealarm == 0 ) timealarm = time_us_64() + 1000;
+    while (1)
+    {
+        main_i2c_loop();
+        timeus = time_us_64();
+        if (timeus > timealarm)
+        {
+            timealarm = timealarm + 1000;
+            mainoutcount ++;
+            if (mainoutcount >= 8)
+            { // 8 ms
+                main_output_loop();
+                mainoutcount = 0;
+            }
+            adcoutcount ++;
+            if (adcoutcount >= 9)
+            { // run adc every 9mS, it runs 16 loops per ADC for 144mS
+                adc_output_loop();
+                adcoutcount = 0;
+            }
+            onewireoutcount ++;
+            if (onewireoutcount >= ONEWIRELOOPMS) {}
+                onewireoutcount = 0;
+                onewire_output_loop(timeus);
+            };
+
+            timey++;
+            if (timey >= 2000) {
+                printf("PICO says hi %lld\n",timeus / 1000000);
+                timey=0;
+            }
+
+        }
+    };
+
+void loop_1_delay(uint16_t delay) {
+    uint64_t timeus,timeus2;
+    timeus = time_us_64();
+    loop_1();
+    timeus2 = time_us_64();
+    if (timeus2 < (timeus+delay)) 
+        sleep_us(delay-(timeus2 -timeus));
+}
+
 
 int main_1()
 {
-    uint64_t timeus;
-    uint64_t timealarm;
-    uint8_t mainoutcount = 0;
-    uint16_t adcoutcount = 0;
+    struct repeating_timer pwm_timer;
+    core1alarms = alarm_pool_create_with_unused_hardware_alarm(4);
     context.max = 0;
     text_debug=1;
     do_send_str(PORT_CMD,"\nDoes a bunch of stuff.\n");
@@ -518,30 +635,14 @@ int main_1()
     setup_pwm();
     setup_gpio();
     setup_adc();
-//    udp_recv(l_udp_pcb,udp_recv_cb,NULL);
-    timealarm = time_us_64() + 1000;
-    while (1)
-    {
+    
+    alarm_pool_add_repeating_timer_us(core1alarms,PWMIN_PERIODUS,&main_pwm_loop,NULL,&pwm_timer);
+          
 
-        main_i2c_loop();
-        main_pwm_loop();
-        timeus = time_us_64();
-        if (timeus > timealarm)
-        {
-            timealarm = timealarm + 1000;
-            mainoutcount++;
-            if (mainoutcount >= 8)
-            { // 8 ms
-                main_output_loop();
-                mainoutcount = 0;
-            }
-            adcoutcount++;
-            if (adcoutcount >= 100)
-            { // 1000 ms
-                adc_output_loop();
-                adcoutcount = 0;
-            }
-        }
-    };
+
+
+    udp_recv(l_udp_pcb,udp_recv_cb,NULL);
+
+while(1) loop_1();
 };
 

@@ -1,0 +1,85 @@
+
+(rules PCB mt32pipico
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 7)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.0)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd-smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    GND /PWR "Net-(J2-Pin_9)" "Net-(J2-Pin_5)" /SWCLK "unconnected-(J2-Pin_2-Pad2)" /SWDIO "Net-(J2-Pin_1)"
+    "Net-(J3-Pin_9)" "Net-(J3-Pin_3)" "unconnected-(J3-Pin_2-Pad2)" /RXD /SCL /SDA /TXD "Net-(J3-Pin_1)"
+    /RELAY1 /RELAY2 /VBUS "unconnected-(J5-Pin_7-Pad7)" "unconnected-(J5-Pin_3-Pad3)" "/LED_USER" "/LED_DISK" "/LED_PWR"
+    "unconnected-(J5-Pin_1-Pad1)" "unconnected-(J6-Pin_2-Pad2)" "/BTN_RESET" "/BTN_OSD" "/BTN_USER" /ADC2 /ADC1 /ADC0
+    /PWMIN1 /OUT1 /PWMOUT1 /PWMOUT2 /PWMOUT3 /PWMOUT4 "unconnected-(P1-Pin_1-Pad1)" "Net-(P1-Pin_3)"
+    "Net-(P1-Pin_5)" "Net-(P1-Pin_8)" "unconnected-(P1-Pin_17-Pad17)" "unconnected-(P1-Pin_18-Pad18)" /BTN1 "/PCM_CLK" /BTN2 "unconnected-(P1-Pin_19-Pad19)"
+    "unconnected-(P1-Pin_21-Pad21)" "unconnected-(P1-Pin_22-Pad22)" "unconnected-(P1-Pin_23-Pad23)" "unconnected-(P1-Pin_24-Pad24)" "unconnected-(P1-Pin_26-Pad26)" "unconnected-(P1-Pin_27-Pad27)" "unconnected-(P1-Pin_28-Pad28)" "unconnected-(P1-Pin_29-Pad29)"
+    "unconnected-(P1-Pin_31-Pad31)" "unconnected-(P1-Pin_32-Pad32)" "unconnected-(P1-Pin_33-Pad33)" "/PCM_FS" "unconnected-(P1-Pin_36-Pad36)" "unconnected-(P1-Pin_37-Pad37)" "unconnected-(P1-Pin_38-Pad38)" "/PCM_DOUT"
+    /BTN3 /BTN4 /BTN5 "unconnected-(U1-GPIO15-Pad20)" /OUT2 "unconnected-(U1-RUN-Pad30)" "unconnected-(U1-ADC_VREF-Pad35)" "unconnected-(U1-3V3-Pad36)"
+    "unconnected-(U1-3V3_EN-Pad37)" "unconnected-(U1-VSYS-Pad39)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

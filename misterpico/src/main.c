@@ -1,13 +1,20 @@
-#include "pico/stdlib.h"
-#include "pico/bootrom.h"
-#include "pico/multicore.h"
-#include "hardware/watchdog.h"
-#include "hardware/structs/watchdog.h"
-#include "pico/unique_id.h"
-#include "pico/util/queue.h"
+#define SYS_CLK_MHZ 200
+#include <pico/stdlib.h>
+#include <pico/bootrom.h>
+#include <pico/multicore.h>
+#include <hardware/watchdog.h>
+#include <hardware/structs/watchdog.h>
+#include <pico/unique_id.h>
+#include <pico/util/queue.h>
+
+#include <tusb.h>
 
 #include "tusb_lwip_glue.h"
+
+#include "pico_tusb_reset_interface.h"
+
 #include "lwipopts.h"
+
 
 queue_t send_q;
 queue_t recv_q;
@@ -53,11 +60,11 @@ int main()
 //    stdio_uart_init_full(uart0,115200,0,1);
 //    stdio_init_all();
 //    stdio_usb_init();
-    set_sys_clock_khz(200000,true);
     printf("Hello world\n");
     // Initialize tinyusb, lwip, dhcpd and httpd
     pbuf_init();
     init_lwip();
+    stdio_usb_init();
     wait_for_netif_is_up();
     dhcpd_init();
     l_udp_pcb = udp_new();
@@ -68,6 +75,8 @@ int main()
     sleep_ms(10);
 
     multicore_launch_core1(main_1);
+    printf("All Cores Launched\n");
+
 //    n=0;
     while (true)
     {
@@ -86,3 +95,13 @@ int main()
     return(0);
 }
 
+extern 
+// Implementation of vendor interface callback
+bool tud_vendor_control_xfer_cb(__unused uint8_t rhport, uint8_t stage, tusb_control_request_t const * request) {
+    switch (request->wIndex) {
+        case 4:
+            return reset_interface_cb(stage, request);
+        // If you have more vendor interfaces, forward their calls here
+    }
+    return false;
+}

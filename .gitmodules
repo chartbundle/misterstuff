@@ -1,0 +1,3 @@
+[submodule "misterpico/libs/pico-1wire-lib"]
+	path = misterpico/libs/pico-1wire-lib
+	url = https://github.com/tjko/pico-1wire-lib.git

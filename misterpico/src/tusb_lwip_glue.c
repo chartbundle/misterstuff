@@ -37,7 +37,7 @@ static struct pbuf *received_frame;
 /* this is used by this code, ./class/net/net_driver.c, and usb_descriptors.c */
 /* ideally speaking, this should be generated from the hardware's unique ID (if available) */
 /* it is suggested that the first byte is 0x02 to indicate a link-local address */
-const uint8_t tud_network_mac_address[6] = {0x02,0x72,0x84,0x89,0x96,0x00};
+uint8_t tud_network_mac_address[6] ;
 
 /* network parameters of this MCU */
 static const ip_addr_t ipaddr  = IPADDR4_INIT_BYTES(172, 31,  89, 1);
@@ -113,12 +113,20 @@ void init_lwip(void)
     /* Initialize lwip */
     lwip_init();
     
-    /* the lwip virtual MAC address must be different from the host's; to ensure this, we toggle the LSbit */
-    netif->hwaddr_len = sizeof(tud_network_mac_address);
-    memcpy(netif->hwaddr, tud_network_mac_address, sizeof(tud_network_mac_address));
-    netif->hwaddr[5] ^= 0x01;
+     // generate new tud_network_mac_address from pico board_id, as in cyw43_hal_generate_laa_mac()
+  pico_unique_board_id_t board_id;
+  pico_get_unique_board_id(&board_id);
+  memcpy(tud_network_mac_address, &board_id.id[2], 6);
+  tud_network_mac_address[0] &= (uint8_t)~0x1; // unicast
+  tud_network_mac_address[0] |= 0x2; // locally administered
+
+
     
     netif = netif_add(netif, &ipaddr, &netmask, &gateway, NULL, netif_init_cb, ip_input);
+  // the lwip virtual MAC address must be different from the host's; toggle the LSB
+  netif->hwaddr_len = sizeof(tud_network_mac_address);
+  memcpy(netif->hwaddr, tud_network_mac_address, sizeof(tud_network_mac_address));
+  netif->hwaddr[5] ^= 0x01;
     netif_set_default(netif);
 }
 
@@ -201,42 +209,42 @@ void wait_for_netif_is_up()
 }
 
 
-/* lwip platform specific routines for Pico */
-auto_init_mutex(lwip_mutex);
-static int lwip_mutex_count = 0;
+// /* lwip platform specific routines for Pico */
+// auto_init_mutex(lwip_mutex);
+// static int lwip_mutex_count = 0;
 
-sys_prot_t sys_arch_protect(void)
-{
-    uint32_t owner;
-    if (!mutex_try_enter(&lwip_mutex, &owner))
-    {
-        if (owner != get_core_num())
-        {
-            // Wait until other core releases mutex
-            mutex_enter_blocking(&lwip_mutex);
-        }
-    }
+// sys_prot_t sys_arch_protect(void)
+// {
+//     uint32_t owner;
+//     if (!mutex_try_enter(&lwip_mutex, &owner))
+//     {
+//         if (owner != get_core_num())
+//         {
+//             // Wait until other core releases mutex
+//             mutex_enter_blocking(&lwip_mutex);
+//         }
+//     }
 
-    lwip_mutex_count++;
+//     lwip_mutex_count++;
     
-    return 0;
-}
+//     return 0;
+// }
 
-void sys_arch_unprotect(sys_prot_t pval)
-{
-    (void)pval;
+// void sys_arch_unprotect(sys_prot_t pval)
+// {
+//     (void)pval;
 
-    if (lwip_mutex_count)
-    {
-        lwip_mutex_count--;
-        if (!lwip_mutex_count)
-        {
-            mutex_exit(&lwip_mutex);
-        }
-    }
-}
+//     if (lwip_mutex_count)
+//     {
+//         lwip_mutex_count--;
+//         if (!lwip_mutex_count)
+//         {
+//             mutex_exit(&lwip_mutex);
+//         }
+//     }
+// }
 
-uint32_t sys_now(void)
-{
-    return to_ms_since_boot( get_absolute_time() );
-}
+// uint32_t sys_now(void)
+// {
+//     return to_ms_since_boot( get_absolute_time() );
+// }

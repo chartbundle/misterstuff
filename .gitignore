@@ -1,3 +1,5 @@
 *-backups
 *.zip
 misterpico/build
+**/gerbers
+**/.pio
