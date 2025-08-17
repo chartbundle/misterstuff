@@ -21,8 +21,6 @@
 
 #define STDOUT 1
 #define RLE_ESCAPE 0xd2
-#define NUMPWMOUT 4
-#define NUMPWMIN 4
 #define I2C_DATA_CMD_FIRST_BYTE 0x00000800
 #define SERIAL_TIMEOUTUS 100000
 #define PWMIN_DIV 64
@@ -30,7 +28,7 @@
 #define PWMIN_ROTATE 3      // /2^x
 
 #define PORT_CMD 35310
-#define PORT_OLED 35311
+// #define PORT_OLED 35311
 #define PORT_PWM 35312
 #define PORT_ADC 35313
 #define PORT_ONEWIRE 35314
@@ -75,6 +73,7 @@ void do_send_str(uint16_t port, char *msg) {
 }
 
 static bool text_debug;
+#ifdef PORT_OLED
 static const uint I2C_SLAVE_ADDRESS = 0x3c;
 // static const uint I2C_BAUDRATE = 100000; // 100 kHz
 
@@ -96,9 +95,14 @@ static struct
     volatile uint8_t bank;
     volatile uint16_t max;
 } context;
+#endif
+#define NUMPWMOUT 4
+#define NUMPWMIN 3
+const uint8_t pwminpins[] = {17, 19, 21};
+const uint8_t pwminslice[] = {0, 1, 2};
+const uint8_t hzinpins[] = {9};
+const uint8_t hzinslice[] = {4};
 
-const uint8_t pwminpins[] = {17, 19, 21, 9};
-const uint8_t pwminslice[] = {0, 1, 2, 4};
 const uint8_t pwmoutpins[] = {6, 10, 12, 14};
 const uint8_t pwmoutslice[] = {3, 5, 6, 7};
 const uint8_t pwmoutdivint[] = {255, 255, 255, 255};
@@ -135,6 +139,7 @@ static struct
 //     volatile bool update;
 // } outputs;
 
+#ifdef PORT_OLED
 static volatile uint8_t read_bank;
 static uint8_t scratchpad[2048];
 static uint8_t rlepad[2048];
@@ -263,6 +268,7 @@ static void main_i2c_loop()
     memcpy(sharedbuf+4,rlepad, rlelen);
     do_send(PORT_OLED,rlelen+4);
 }
+#endif
 
 void setup_pwm()
 {
@@ -403,13 +409,15 @@ void setup_adc()
     }
 };
 
-void main_output_loop()
+void pwm_output_loop()
 {
     uint8_t i;
 
     if (text_debug) {
         BPREP;
-        BPRINTF("LED: %d %d %d %d\n", pwmin.dutycycle[0], pwmin.dutycycle[1], pwmin.dutycycle[2], pwmin.dutycycle[3]);
+        BPRINTF("PWM:");
+        for (i = 0; i < NUMPWMIN; i++) BPRINTF(" %d",pwmin.dutycycle[i]);
+        BPRINTF("\n");
         BFLUSH(PORT_CMD);
     };
     sharedbuf[0]=0x0e;
@@ -576,21 +584,23 @@ void udp_recv_cb(void *arg , struct udp_pcb* upcb, struct pbuf* p, const ip_addr
 
 void loop_1() {
     static uint64_t timeus,timealarm;
-    static uint8_t mainoutcount,adcoutcount,onewireoutcount;
+    static uint8_t pwmoutcount,adcoutcount,onewireoutcount;
     static uint16_t timey;
     if (timealarm == 0 ) timealarm = time_us_64() + 1000;
     while (1)
     {
+#ifdef PORT_OLED
         main_i2c_loop();
+#endif
         timeus = time_us_64();
         if (timeus > timealarm)
         {
             timealarm = timealarm + 1000;
-            mainoutcount ++;
-            if (mainoutcount >= 8)
+            pwmoutcount ++;
+            if (pwmoutcount >= 8)
             { // 8 ms
-                main_output_loop();
-                mainoutcount = 0;
+                pwm_output_loop();
+                pwmoutcount = 0;
             }
             adcoutcount ++;
             if (adcoutcount >= 9)
@@ -599,7 +609,7 @@ void loop_1() {
                 adcoutcount = 0;
             }
             onewireoutcount ++;
-            if (onewireoutcount >= ONEWIRELOOPMS) {}
+            if (onewireoutcount >= ONEWIRELOOPMS) {
                 onewireoutcount = 0;
                 onewire_output_loop(timeus);
             };
@@ -612,6 +622,7 @@ void loop_1() {
 
         }
     };
+};
 
 void loop_1_delay(uint16_t delay) {
     uint64_t timeus,timeus2;
@@ -627,22 +638,22 @@ int main_1()
 {
     struct repeating_timer pwm_timer;
     core1alarms = alarm_pool_create_with_unused_hardware_alarm(4);
-    context.max = 0;
     text_debug=1;
     do_send_str(PORT_CMD,"\nDoes a bunch of stuff.\n");
-
+#ifdef PORT_OLED
+    context.max = 0;
     setup_slave();
+#endif
     setup_pwm();
     setup_gpio();
     setup_adc();
     
     alarm_pool_add_repeating_timer_us(core1alarms,PWMIN_PERIODUS,&main_pwm_loop,NULL,&pwm_timer);
           
-
-
-
     udp_recv(l_udp_pcb,udp_recv_cb,NULL);
 
 while(1) loop_1();
+return(0);// never reached
 };
+
 
