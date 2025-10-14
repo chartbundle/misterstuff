@@ -3129,34 +3129,36 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Jumper:Jumper_2_Bridged"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
+		(symbol "Interface_USB:TS3USB30EDGSR"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "JP"
-				(at 0 1.905 0)
+			(property "Reference" "U"
+				(at -6.35 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "Jumper_2_Bridged"
-				(at 0 -2.54 0)
+			(property "Value" "TS3USB30EDGSR"
+				(at 8.89 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Package_SO:VSSOP-10_3x3mm_P0.5mm"
+				(at 20.32 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts3usb30e.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3165,7 +3167,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Description" "ESD-Protected, High-Speed USB 2.0 (480-Mbps) 1:2 Multiplexer/Demultiplexer Switch With Single Enable, VSSOP-10"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3174,7 +3176,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Jumper, 2-pole, closed/bridged"
+			(property "ki_keywords" "usb mux"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3183,7 +3185,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "Jumper SPST"
+			(property "ki_fp_filters" "VSSOP*3x3mm*P0.5mm*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3192,58 +3194,76 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Jumper_2_Bridged_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
+			(symbol "TS3USB30EDGSR_1_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
 					(stroke
 						(width 0)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_2_Bridged_0_1"
-				(arc
-					(start -1.524 0.254)
-					(mid 0 0.762)
-					(end 1.524 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_2_Bridged_1_1"
-				(pin passive line
-					(at -5.08 0 0)
+				(pin bidirectional line
+					(at -10.16 5.08 0)
 					(length 2.54)
-					(name "A"
+					(name "D+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "D-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "~{OE}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3258,10 +3278,46 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 5.08 0 180)
+				(pin power_in line
+					(at 0 10.16 270)
 					(length 2.54)
-					(name "B"
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "D1+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3269,6 +3325,60 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "D1-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "D2+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "D2-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6032,12 +6142,6 @@
 		(uuid "22776589-607a-4012-a6ed-0d1a6b1ba32b")
 	)
 	(junction
-		(at 246.38 143.51)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2a4c9786-4ac2-410e-bc45-838d8bbe31d8")
-	)
-	(junction
 		(at 340.36 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6054,12 +6158,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "43b4c8c9-9929-4c75-8f0f-898e1d168dc4")
-	)
-	(junction
-		(at 246.38 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4a4c247b-b172-48c0-90ba-2924646f16f0")
 	)
 	(junction
 		(at 346.71 68.58)
@@ -6188,10 +6286,6 @@
 		(uuid "87340ab6-9016-4037-a952-2cb3fae6b2f5")
 	)
 	(no_connect
-		(at 330.2 58.42)
-		(uuid "973ab6b7-7423-442c-a558-5a674d0a632d")
-	)
-	(no_connect
 		(at 167.64 137.16)
 		(uuid "b72d8aee-7286-4be1-b4da-3f0a3ffd26fa")
 	)
@@ -6226,6 +6320,16 @@
 			(type default)
 		)
 		(uuid "0616545d-c75e-4f07-82ec-10a60b8908ec")
+	)
+	(wire
+		(pts
+			(xy 71.12 153.67) (xy 81.28 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06bde67f-c8f8-4baa-935e-2adc388b6fb1")
 	)
 	(wire
 		(pts
@@ -6306,16 +6410,6 @@
 			(type default)
 		)
 		(uuid "21c92c68-a6da-4f69-aae4-d1c7b4788137")
-	)
-	(wire
-		(pts
-			(xy 246.38 130.81) (xy 246.38 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25b404a9-b3ec-4b94-ae45-be88359236f4")
 	)
 	(wire
 		(pts
@@ -6579,6 +6673,16 @@
 	)
 	(wire
 		(pts
+			(xy 64.77 160.02) (xy 71.12 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75c3f9fc-3347-49fb-bf0b-ebf96b09e001")
+	)
+	(wire
+		(pts
 			(xy 285.75 88.9) (xy 285.75 101.6)
 		)
 		(stroke
@@ -6636,6 +6740,16 @@
 			(type default)
 		)
 		(uuid "80966cb7-bc65-46f0-ba11-3b7f6fb6a29f")
+	)
+	(wire
+		(pts
+			(xy 64.77 162.56) (xy 73.66 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8416b10d-410a-4734-a84f-cc3e50e82061")
 	)
 	(wire
 		(pts
@@ -6726,6 +6840,16 @@
 			(type default)
 		)
 		(uuid "9f88df7a-1282-4691-ac47-7dff87257af2")
+	)
+	(wire
+		(pts
+			(xy 73.66 156.21) (xy 81.28 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a239c4a5-aa20-45f2-9f15-092bb3805781")
 	)
 	(wire
 		(pts
@@ -7069,6 +7193,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.12 160.02) (xy 71.12 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f40b9ab2-25b1-4779-928b-e14f8b558582")
+	)
+	(wire
+		(pts
 			(xy 261.62 81.28) (xy 267.97 81.28)
 		)
 		(stroke
@@ -7086,6 +7220,16 @@
 			(type default)
 		)
 		(uuid "f49f7d1d-e3b9-41d3-b9a5-c3dc55257e83")
+	)
+	(wire
+		(pts
+			(xy 73.66 162.56) (xy 73.66 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f781d8be-0245-4b22-a438-083d64cecb01")
 	)
 	(wire
 		(pts
@@ -7137,6 +7281,16 @@
 		)
 		(uuid "ffed3bf4-df61-43c5-8fbc-49db5367b300")
 	)
+	(label "USBSW2"
+		(at 44.45 170.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "03398e58-fbd6-4f27-9eff-4dfc744229d5")
+	)
 	(label "RELAY1_OC"
 		(at 243.84 71.12 0)
 		(effects
@@ -7187,15 +7341,15 @@
 		)
 		(uuid "0a08a3fd-75ab-47df-a28e-71d74ba963bd")
 	)
-	(label "DISPLAY_PWM"
-		(at 259.08 140.97 0)
+	(label "VBUS"
+		(at 344.17 57.15 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "0a46d214-f4a4-4aa4-ad61-5136bc464c11")
+		(uuid "1015622e-a570-43bc-8e0e-71f3c8a2949f")
 	)
 	(label "VSYS_IN"
 		(at 203.2 165.1 180)
@@ -7327,16 +7481,6 @@
 		)
 		(uuid "351fbf05-c94b-4b02-a1ef-0e9a1b37b613")
 	)
-	(label "USB_SWITCH_OC"
-		(at 167.64 129.54 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "38fb70e9-1740-4e3a-9163-63a18e9779d4")
-	)
 	(label "LED_PWR"
 		(at 294.64 91.44 180)
 		(effects
@@ -7346,16 +7490,6 @@
 			(justify right bottom)
 		)
 		(uuid "3ce67e76-214f-4899-89c7-768441d10347")
-	)
-	(label "ADC2"
-		(at 259.08 138.43 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3e22b9d0-021f-413a-a231-ad1d96200555")
 	)
 	(label "FANTACH"
 		(at 281.94 170.18 0)
@@ -7376,16 +7510,6 @@
 			(justify left bottom)
 		)
 		(uuid "423acc0a-7ec1-4f49-9867-aa44c5f897bf")
-	)
-	(label "USB_SWITCH_MON"
-		(at 220.98 149.86 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4321312c-3a91-4a5a-a98a-72928789c70d")
 	)
 	(label "MISO"
 		(at 330.2 106.68 0)
@@ -7417,6 +7541,16 @@
 		)
 		(uuid "492a5017-0ec7-40ba-b8d0-6759506905cb")
 	)
+	(label "_USBSWOE"
+		(at 44.45 167.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4a70e8b8-6979-4f60-b8a3-3e8a97698e48")
+	)
 	(label "DISPLAY_PWM"
 		(at 294.64 68.58 180)
 		(effects
@@ -7436,6 +7570,16 @@
 			(justify left bottom)
 		)
 		(uuid "4dee5c62-5b43-4f45-8062-c2846dfb6a84")
+	)
+	(label "USBSW1"
+		(at 81.28 163.83 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5c252ef5-d229-46a6-83d6-000822a414e9")
 	)
 	(label "PI_PWR"
 		(at 294.64 86.36 180)
@@ -7466,16 +7610,6 @@
 			(justify left bottom)
 		)
 		(uuid "6a27bc19-7b52-40bc-90d7-b98d8b497edf")
-	)
-	(label "USB_SWITCH_OC"
-		(at 220.98 147.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6fdca9b7-788a-4284-b960-48e693b6c43d")
 	)
 	(label "LED_PWR_OUT"
 		(at 248.92 109.22 180)
@@ -7627,6 +7761,26 @@
 		)
 		(uuid "9c734ee6-3eea-4dcb-a47a-e587962ec473")
 	)
+	(label "VSYS"
+		(at 344.17 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9d8cbb59-7685-4a08-9ea0-bfe08bed896c")
+	)
+	(label "ADC2"
+		(at 259.08 135.89 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9e0413f9-e1e7-4146-8733-d8dc0d9cbcf8")
+	)
 	(label "LED_USER"
 		(at 203.2 35.56 180)
 		(effects
@@ -7696,6 +7850,16 @@
 			(justify left bottom)
 		)
 		(uuid "b1539aa3-9325-419b-b749-36ce0ac1adf9")
+	)
+	(label "VBUS"
+		(at 330.2 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b2f4bb3a-da6a-4a06-b18d-febf1a152c99")
 	)
 	(label "RELAY2"
 		(at 294.64 60.96 180)
@@ -7849,16 +8013,6 @@
 		)
 	)
 	(label "USB_SWITCH"
-		(at 147.32 129.54 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "dcc6d70f-482d-4911-bf53-bb2118c842c5")
-	)
-	(label "USB_SWITCH"
 		(at 294.64 66.04 180)
 		(effects
 			(font
@@ -7888,6 +8042,16 @@
 		)
 		(uuid "de73b09e-f02f-474f-a3c4-2b8efe2c9814")
 	)
+	(label "_USBSWOE"
+		(at 81.28 161.29 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e673a47c-4b72-4469-914c-2e652189b9f0")
+	)
 	(label "LED_USER"
 		(at 294.64 96.52 180)
 		(effects
@@ -7907,6 +8071,16 @@
 			(justify left bottom)
 		)
 		(uuid "ec0fa614-7bc8-44bd-b43a-81070239a649")
+	)
+	(label "DISPLAY_PWM"
+		(at 259.08 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eca7ca1e-947e-4908-935b-679404da7aac")
 	)
 	(label "VSYS_IN"
 		(at 139.7 163.83 0)
@@ -8251,16 +8425,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 77.47 139.7 0)
+		(at 54.61 175.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "0d1bf850-bb0f-4289-9de2-ac55354360aa")
+		(uuid "0f504d65-bb91-4ca0-95e5-927adad509d3")
 		(property "Reference" "#PWR014"
-			(at 77.47 146.05 0)
+			(at 54.61 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8269,7 +8443,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 77.47 144.78 0)
+			(at 54.61 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8277,7 +8451,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 77.47 139.7 0)
+			(at 54.61 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8286,7 +8460,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 77.47 139.7 0)
+			(at 54.61 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8295,7 +8469,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 77.47 139.7 0)
+			(at 54.61 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8304,7 +8478,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "242ffd48-b2c7-4fa5-a78a-569d09e14f6e")
+			(uuid "c5ee7b82-f092-4968-a431-a44cbf3ffa05")
 		)
 		(instances
 			(project ""
@@ -8713,6 +8887,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 339.09 57.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "242f0431-22df-4954-a6bf-f2da288af8d2")
+		(property "Reference" "J2"
+			(at 339.725 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 339.725 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 339.09 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 339.09 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 339.09 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9e59c522-456e-4058-a7c7-f1bcd145631e")
+		)
+		(pin "2"
+			(uuid "7e4e6e12-fae1-4aa2-9d30-25179294ff1e")
+		)
+		(instances
+			(project ""
+				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 227.33 71.12 0)
 		(unit 1)
@@ -8844,6 +9086,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 91.44 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2cf99c55-311a-4ef2-8521-de31c0766331")
+		(property "Reference" "#PWR022"
+			(at 91.44 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 91.44 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 91.44 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "27dd6605-cfb6-4e26-99be-5f4a7a98e96d")
+		)
+		(instances
+			(project ""
+				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 64.77 82.55 0)
 		(unit 1)
@@ -8902,6 +9210,72 @@
 			(project "picoio"
 				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
 					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 54.61 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "333046a2-14de-41ba-83fa-b85acd4b239a")
+		(property "Reference" "#PWR020"
+			(at 54.61 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 54.61 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 54.61 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cf7434e4-fc4e-4992-b784-bc0b20785044")
+		)
+		(instances
+			(project ""
+				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -9197,72 +9571,6 @@
 			(project ""
 				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
 					(reference "#FLG05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 87.63 139.7 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "47f794e1-82c6-4dbb-832d-3aeaeeba3712")
-		(property "Reference" "#PWR015"
-			(at 87.63 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 87.63 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 87.63 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 87.63 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 87.63 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dc9f04c1-0d47-4c58-90da-d1885281ba66")
-		)
-		(instances
-			(project ""
-				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
-					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -10075,7 +10383,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 259.08 130.81 0)
+		(at 259.08 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10084,7 +10392,7 @@
 		(fields_autoplaced yes)
 		(uuid "69c6b0ed-fdb9-423c-b47f-fa764994c745")
 		(property "Reference" "#PWR018"
-			(at 259.08 134.62 0)
+			(at 259.08 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10093,7 +10401,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 259.08 125.73 0)
+			(at 259.08 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10101,7 +10409,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 259.08 130.81 0)
+			(at 259.08 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10110,7 +10418,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 259.08 130.81 0)
+			(at 259.08 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10119,7 +10427,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 259.08 130.81 0)
+			(at 259.08 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10270,6 +10578,100 @@
 			(project "picoio"
 				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Interface_USB:TS3USB30EDGSR")
+		(at 91.44 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "78cf5b91-5afd-438e-b0e5-caf8f6dbd0ea")
+		(property "Reference" "U4"
+			(at 93.5833 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TS3USB30EDGSR"
+			(at 93.5833 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:VSSOP-10_3x3mm_P0.5mm"
+			(at 111.76 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts3usb30e.pdf"
+			(at 91.44 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ESD-Protected, High-Speed USB 2.0 (480-Mbps) 1:2 Multiplexer/Demultiplexer Switch With Single Enable, VSSOP-10"
+			(at 91.44 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "62aee7f0-a4de-4197-a554-dbcc2a9243d9")
+		)
+		(pin "7"
+			(uuid "70026b08-f7bd-4c37-a0f2-66627c34b69e")
+		)
+		(pin "1"
+			(uuid "0e900e2f-2e75-428f-a1b6-f825bbf32d22")
+		)
+		(pin "4"
+			(uuid "e3be2452-7c7a-4b2d-93ae-da01c5c9b533")
+		)
+		(pin "10"
+			(uuid "5aa3e696-63e8-4f6a-96c4-52ae08aefc14")
+		)
+		(pin "5"
+			(uuid "2330cb47-d74d-4406-9f60-b43c97ab31e9")
+		)
+		(pin "2"
+			(uuid "390546b9-9c30-4623-ae77-96dbb9b863f6")
+		)
+		(pin "9"
+			(uuid "020112e7-6de4-4169-ba02-77553a0ed3af")
+		)
+		(pin "6"
+			(uuid "d9d8eb68-58d2-480a-9a74-0b2083c0aaab")
+		)
+		(pin "8"
+			(uuid "28bd7e1b-5218-44f1-a3b7-4b6c8750a859")
+		)
+		(instances
+			(project ""
+				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -10485,6 +10887,100 @@
 		)
 	)
 	(symbol
+		(lib_id "Interface_USB:TS3USB30EDGSR")
+		(at 54.61 165.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7f20de8d-5c0f-4fdd-a272-aba1df3e4627")
+		(property "Reference" "U5"
+			(at 56.7533 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TS3USB30EDGSR"
+			(at 56.7533 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:VSSOP-10_3x3mm_P0.5mm"
+			(at 74.93 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts3usb30e.pdf"
+			(at 54.61 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ESD-Protected, High-Speed USB 2.0 (480-Mbps) 1:2 Multiplexer/Demultiplexer Switch With Single Enable, VSSOP-10"
+			(at 54.61 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "799d7334-3958-44a3-ac4a-ea8d8b7ad25f")
+		)
+		(pin "7"
+			(uuid "ed2b3d7d-bb9a-441c-83d0-db434b8a4d59")
+		)
+		(pin "1"
+			(uuid "db283f45-3c80-4552-bc18-e95b9f74dd3a")
+		)
+		(pin "4"
+			(uuid "9d99577b-5b41-4d94-a0db-66bfd4daf661")
+		)
+		(pin "10"
+			(uuid "178bcf0b-6481-42f9-b4d3-d9deda879982")
+		)
+		(pin "5"
+			(uuid "9ecf1f69-b6fd-45ad-a4a2-682ae66f4af7")
+		)
+		(pin "2"
+			(uuid "affa27d9-3c25-4d76-9ad6-73ac59ee4a7a")
+		)
+		(pin "9"
+			(uuid "54cabb66-960e-47a6-9f61-2db166d5a6b4")
+		)
+		(pin "6"
+			(uuid "e82a1aae-70ff-4279-84ff-9e8ba9e7b0c8")
+		)
+		(pin "8"
+			(uuid "962803a9-45e3-4c56-ade8-bc9c7f097b54")
+		)
+		(instances
+			(project "picoio"
+				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
 		(at 171.45 156.21 0)
 		(unit 1)
@@ -10552,7 +11048,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_02x06_Odd_Even")
+		(lib_id "Connector_Generic:Conn_02x04_Odd_Even")
 		(at 251.46 135.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10562,7 +11058,7 @@
 		(fields_autoplaced yes)
 		(uuid "81c3ed48-a6b9-4b64-94dc-7818b4523843")
 		(property "Reference" "J8"
-			(at 252.73 125.73 0)
+			(at 252.73 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10570,14 +11066,14 @@
 			)
 		)
 		(property "Value" "IO"
-			(at 252.73 128.27 0)
+			(at 252.73 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
 			(at 251.46 135.89 0)
 			(effects
 				(font
@@ -10595,25 +11091,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 251.46 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
 			(uuid "16fa23f0-3448-4207-a8b2-1fb2c93c0783")
-		)
-		(pin "10"
-			(uuid "3ee1c6ee-ce22-4d1a-921b-860c30c7fd1d")
-		)
-		(pin "11"
-			(uuid "e93575a5-3919-4518-ae08-eca3d686acf6")
-		)
-		(pin "12"
-			(uuid "8cdd8643-e914-4d2c-a4ee-d800f48ba12f")
 		)
 		(pin "2"
 			(uuid "902897ad-90ba-4513-a8fa-7fe17f2bee75")
@@ -10635,9 +11123,6 @@
 		)
 		(pin "8"
 			(uuid "d479732a-b026-4b8f-9252-48e39594b82e")
-		)
-		(pin "9"
-			(uuid "f0cc88ec-bfb4-4b80-8b2f-165a19aedc88")
 		)
 		(instances
 			(project "mt32pipico"
@@ -10844,6 +11329,72 @@
 			(project "picoio"
 				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
 					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 91.44 168.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9c6eebf7-0d36-469e-af1d-f3cb6acd3b3d")
+		(property "Reference" "#PWR015"
+			(at 91.44 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 91.44 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 91.44 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3f4be800-8565-49e1-a917-fef2058aecde")
+		)
+		(instances
+			(project ""
+				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -11564,74 +12115,6 @@
 			(project "picoio"
 				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
 					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_2_Bridged")
-		(at 82.55 139.7 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ca3243f5-2bb4-4d13-9f26-85c6f73b116e")
-		(property "Reference" "JP1"
-			(at 82.55 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Jumper_2_Bridged"
-			(at 82.55 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 82.55 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 82.55 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, closed/bridged"
-			(at 82.55 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "9db36a74-8c7a-4b60-8dd4-6cce81c4063c")
-		)
-		(pin "1"
-			(uuid "7b14792f-1482-44d5-b465-df33bbd21d6a")
-		)
-		(instances
-			(project ""
-				(path "/d7f263e6-5209-4f9f-8c3a-b06ff99352e8"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
